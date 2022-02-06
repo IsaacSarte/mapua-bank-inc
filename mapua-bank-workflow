@@ -1,10 +1,10 @@
-# Hero
-	> - Analytics (Bank Money, Bank Members, Bank Transactions)
-	> - Create User
-	> - Members
-	> - Transaction History
+Hero
+	- Analytics (Bank Money, Bank Members, Bank Transactions)
+	- Create User
+	- Members
+	- Transaction History
 
-# Create Account Holder
+Create User
 	- First Name
 	- Last Name
 	- Account No.
@@ -16,7 +16,7 @@
 	- Expense Array
 	- History Array
 
-# Account Holder
+Member
 	- Name
 	- Account No.
 	- Balance
@@ -24,18 +24,18 @@
 		- Freeze
 		- unFreeze
 
-# Transaction History
+Transaction History
 	- Overall Transaction History
 
 
-# History
+History
 	- type: deposit, withdraw, transfer
 	- amount
 	- sender
 	- receiver
 
 
-# Client
+Client
 	Ichibank Member
 		- Personal data
 		- Transaction Features
@@ -46,12 +46,12 @@
 		- Expense Tracker only
 
 
-# Budget Planner
+Expense Tracker
 	- Current Budget
 	- Expense Creation
 	- Expense List
 
-# History {
+History {
 	title:
 	cost:
 }
