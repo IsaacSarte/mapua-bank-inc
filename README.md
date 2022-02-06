@@ -52,5 +52,5 @@
 	> Expense List
 
 # History
-    >title:
-    >cost:
+    > title:
+    > cost:
