@@ -1,8 +1,8 @@
 # Hero
-	> - Analytics (Bank Money, Bank Members, Bank Transactions)
-	> - Create User
-	> - Members
-	> - Transaction History
+	>  Analytics (Bank Money, Bank Members, Bank Transactions)
+	>  Create User
+	>  Members
+	>  Transaction History
 
 # Create Account Holder
 	- First Name
