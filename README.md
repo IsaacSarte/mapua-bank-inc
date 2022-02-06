@@ -5,53 +5,52 @@
 	>  Transaction History
 
 # Create Account Holder
-	- First Name
-	- Last Name
-	- Account No.
-	- Username
-	- Password
-	- Email
-	- Phone No.
-	- Balance
-	- Expense Array
-	- History Array
+	> First Name
+	> Last Name
+	> Account No.
+	> Username
+	> Password
+	> Email
+	> Phone No>
+	> Balance
+	> Expense Array
+	> History Array
 
 # Account Holder
-	- Name
-	- Account No.
-	- Balance
-	- onClick
+	> Name
+	> Account No.
+	> Balance
+	> onClick
 		- Freeze
 		- unFreeze
 
 # Transaction History
-	- Overall Transaction History
+	> Overall Transaction History
 
 
 # History
-	- type: deposit, withdraw, transfer
-	- amount
-	- sender
-	- receiver
+	> type: deposit, withdraw, transfer
+	> amount
+	> sender
+	> receiver
 
 
 # Client
-	Ichibank Member
-		- Personal data
-		- Transaction Features
-		- Transaction History
-		- Expense Tracker
+	Account Holder
+		> Personal data
+		> Transaction Features
+		> Transaction History
+		> Expense Tracker
 	
 	Guest User
-		- Expense Tracker only
+		> Expense Tracker only
 
 
 # Budget Planner
-	- Current Budget
-	- Expense Creation
-	- Expense List
+	> Current Budget
+	> Expense Creation
+	> Expense List
 
-# History {
-	title:
-	cost:
-}
+# History
+    >title:
+    >cost:
