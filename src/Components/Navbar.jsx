@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 // images
@@ -24,17 +25,17 @@ const Navbar = () => {
 
     return (
         <nav className={nav ? "nav active" : "nav"}>
-            <Link to='main' className='logo' smooth={true} duration={1000}>
+            <NavLink to='/' className='logo' smooth={true} duration={1000}>
                 <img src={logo} alt='' />
-            </Link>
+            </NavLink>
             <input className='menu-btn' type='checkbox' id='menu-btn' />
             <label className='menu-icon' htmlFor='menu-btn'>
                 <span className='nav-icon'></span>
             </label>
             <ul className='menu'>
-                <li><Link to="main" smooth={true} duration={2000}>Home</Link></li>
-                <li><Link to="products" smooth={true} duration={2000}>Services</Link></li>
-                <li><Link to="about" smooth={true} duration={2000}>About</Link></li>
+                <li><NavLink to="/" smooth={true} duration={1000}>Home</NavLink></li>
+                <li><Link to="products" smooth={true} duration={1000}>Services</Link></li>
+                <li><Link to="about" smooth={true} duration={1000}>About</Link></li>
             </ul>
         </nav>
     )

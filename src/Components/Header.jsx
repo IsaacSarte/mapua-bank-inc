@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // CSS
 import './index.css';
@@ -10,10 +11,12 @@ const Header = () => {
                 <h3>Your personal banking needs</h3>
                 <h1><span>MAPUA</span> BANKING<br /> INC.</h1>
                 <p className="details">Bank with us now.</p>
+
                 <div className='header-btns'>
-                    <a href="#" className="header-btn">Admin?</a>
-                    <a href="#" className="header-btn">Account Holder?</a>
+                    <NavLink to="/admin" exact className="header-btn">Admin?</NavLink>
+                    <NavLink to="/client" exact className="header-btn">Account Holder?</NavLink>
                 </div>
+
             </div>
         </div>
     );

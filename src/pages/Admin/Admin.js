@@ -4,14 +4,14 @@ import React, {useState, useEffect} from 'react';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 
 // Components
-import Navbar from '../../Components/Navbar.jsx';
-import Header from '../../Components/Header.jsx';
+import Navbar from '../../Components/Navbar';
 
 // CSS
+import './styles/admin.css';
 import {css} from "@emotion/core";
 
-const Home = () => {
 
+const Admin = () => {
     /* State Management */
 
     const [loading, setIsLoading] = useState(false);
@@ -28,21 +28,21 @@ const Home = () => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
-        }, 1000);
+        }, 1500);
     },[])
 
+
     return (
-        <div className="home">
-            {
-                loading ? <PropagateLoader color={"#94192F"} loading={loading} css={override} size={40}/> 
-                    : 
-                <>
-                    <Navbar />
-                    <Header />
-                </>
-            }
-        </div>
+      <div>
+        {
+          loading ? <PropagateLoader color={"#94192F"} loading={loading} css={override} size={40}/> 
+            : 
+          <>
+              <Navbar />
+          </>
+        }
+      </div>
     );
 };
 
-export default Home;
+export default Admin;
