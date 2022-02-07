@@ -38,7 +38,9 @@ const Admin = () => {
           loading ? <PropagateLoader color={"#94192F"} loading={loading} css={override} size={40}/> 
             : 
           <>
-              <Navbar />
+            <div>
+              
+            </div>
           </>
         }
       </div>

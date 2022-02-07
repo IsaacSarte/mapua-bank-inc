@@ -1,0 +1,26 @@
+.list {
+  width: 100%;
+
+  background-color: rgb(230, 0, 0);
+
+  margin: 1rem 0;
+  padding: 1rem;
+  list-style: none;
+  border-style: none;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list span {
+  color: black;
+}
+
+.list button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
