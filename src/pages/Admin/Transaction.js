@@ -2,13 +2,12 @@ import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
-import styles from './transaction.module.css'
 
 // Components
-import Sidebar from '../../components/Sidebar/Sidebar';
-import Deposit from '../../components/Admin/Hero/Transactions/Deposit/Deposit'
-import Withdraw from '../../components/Admin/Hero/Transactions/Withdraw/Withdraw'
-import Transfer from '../../components/Admin/Hero/Transactions/Transfer/Transfer'
+/* import Sidebar from '../../components/Sidebar/Sidebar'; */
+import Deposit from '../../Components/Admin/Hero/Transactions/Deposit/Deposit'
+import Withdraw from '../../Components/Admin/Hero/Transactions/Withdraw/Withdraw'
+import Transfer from '../../Components/Admin/Hero/Transactions/Transfer/Transfer'
 
 const Transaction = () => {
 
@@ -20,14 +19,14 @@ const Transaction = () => {
     return (
         <>
         
-        <div className={styles.container}>
-        <Sidebar />
+        <div>
+        {/* <Sidebar /> */}
 
             <button>
-                <NavLink className={styles.navLink} to="/admin" exact>Go Back</NavLink>
+                <NavLink to="/admin" exact>Go Back</NavLink>
             </button>
 
-            <div className={styles.select}>
+            <div>
                 <section 
                     onClick={() => {
                         setDeposit(true);
@@ -55,7 +54,7 @@ const Transaction = () => {
                 </section>
             </div>
 
-            <div className={styles.transaction}>
+            <div>
                 {deposit 
                     ? <Deposit/>
                     : withdraw 

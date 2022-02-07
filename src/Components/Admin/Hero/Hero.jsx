@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom';
 import styles from './hero.module.css';
 
 // Components
-import Sidebar from '../../Sidebar/Sidebar.js';
+/* import Sidebar from '../../Sidebar/Sidebar.js'; */
 
 // Framer Motion
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import { motion, useAnimation } from 'framer-motion';
 
 const Hero = (props) => {
 
@@ -34,7 +34,7 @@ const Hero = (props) => {
 
     return (
         <>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div className={styles.container}>
 
                 <div className={styles.adminUser}>

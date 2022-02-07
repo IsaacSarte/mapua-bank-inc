@@ -2,10 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
-import styles from './history.module.css';
 
 // Components
-import Sidebar from '../../components/Sidebar/Sidebar';
+/* import Sidebar from '../../components/Sidebar/Sidebar'; */
 
 const History = () => {
 
@@ -18,53 +17,53 @@ const History = () => {
     const transfer = transactionHistory.filter(obj => obj.type === "transfer");
 
     return (
-        <div className={styles.container}>
-            <Sidebar />
+        <div>
+            {/* <Sidebar /> */}
 
-            <section className={styles.history}>
+            <section>
 
-                <div className={styles.headerHistory}>
+                <div>
                     <h1>IchiBank Transaction History</h1>
                     <button>
-                        <NavLink className={styles.navLink} to="/admin" exact>Go Back</NavLink>
+                        <NavLink to="/admin" exact>Go Back</NavLink>
                     </button>
                 </div>
 
-                <div className={styles.bodyHistory}>
+                <div>
 
-                    <section className={styles.typeHistory}>
-                        <div className={styles.typeHeader}>
+                    <section>
+                        <div>
                             <h2>Deposit</h2>
                         </div>
-                        <div className={styles.typeBody}>
+                        <div>
                             {deposit.map(obj =>
-                                <div className={styles.typeList}>
+                                <div>
                                     <strong>¥ {obj.amount}</strong>
                                     <em>Acct# :{obj.sender}</em>
                                 </div>)}
                         </div>
                     </section>
 
-                    <section className={styles.typeHistory}>
-                        <div className={styles.typeHeader}>
+                    <section>
+                        <div>
                             <h2>Withdraw</h2>
                         </div>
-                        <div className={styles.typeBody}>
+                        <div>
                             {withdraw.map(obj =>
-                                <div className={styles.typeList}>
+                                <div>
                                     <strong>¥ {obj.amount}</strong>
                                     <em>Acct# :{obj.sender}</em>
                                 </div>)}
                         </div>
                     </section>
 
-                    <section className={styles.typeHistory}>
-                        <div className={styles.typeHeader}>
+                    <section>
+                        <div>
                             <h2>Transfer</h2>
                         </div>
-                        <div className={styles.typeBody}>
+                        <div>
                             {transfer.map(obj =>
-                                <div className={styles.typeList}>
+                                <div>
                                     <em>Acct# :{obj.sender}</em>
                                     <strong>¥ {obj.amount}</strong>
                                     <em>Acct# :{obj.receiver}</em>

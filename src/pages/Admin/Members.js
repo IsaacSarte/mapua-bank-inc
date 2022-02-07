@@ -2,10 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
-import styles from './members.module.css'
 
 // Components
-import Sidebar from '../../components/Sidebar/Sidebar';
+/* import Sidebar from '../../components/Sidebar/Sidebar'; */
 
 const Members = () => {
 
@@ -14,21 +13,21 @@ const Members = () => {
 
 
     return (
-        <div className={styles.container}>
-            <Sidebar />
+        <div>
+            {/* <Sidebar /> */}
 
-            <section className={styles.members}> 
+            <section> 
 
-                <div className={styles.header}>
+                <div>
                     <h1>IchiBank Members</h1>
                     <button>
-                        <NavLink className={styles.navLink} to="/admin" exact>Go Back</NavLink>
+                        <NavLink to="/admin" exact>Go Back</NavLink>
                     </button>
                 </div>
 
-                <div className={styles.body}>
+                <div>
                     {memberList.map(obj => 
-                        <div className={styles.memberList}>
+                        <div>
                             <span>{obj.firstName}&nbsp;{obj.lastName}</span>
                             <span>{obj.username }</span>
                             <span>{obj.accountNo}</span>

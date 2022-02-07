@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useReducer } from 'react';
 
 // CSS
-import styles from './signUp.module.css';
-
-// Framer Motion
-import { motion } from 'framer-motion/dist/es/';
+import './signup.css';
 
 const emailReducer = (state, action) => {
     return {};
@@ -116,143 +113,224 @@ const SignUp = (props) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className="admin-sign-up">
+            <div className="admin-signup-container">
+                <div className="signup-title">
+                    <h2>Welcome to MU Bank Inc Admin Privilages</h2>
+                </div>
+                <div className="signup-content">
+                    <form onSubmit={(e) => { handleSignUp(e) }} className="form">
+                        <div className="admin-details">
+                            <div className="input-box">
+                                <span className="details">First Name</span>
+                                <input
+                                    type="text"
+                                    value={firstName}
+                                    placeholder="Input first name"
+                                    onChange={(e) => { setFirstName(e.target.value) }}
+                                    required
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Last Name</span>
+                                <input
+                                    type="text"
+                                    value={lastName}
+                                    placeholder="Input last name"
+                                    onChange={(e) => { setLastName(e.target.value) }}
+                                    required
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Username</span>
+                                <input
+                                    type="text"
+                                    value={username}
+                                    placeholder="Input username"
+                                    onChange={(e) => { setUsername(e.target.value.trim()) }}
+                                    disabled={disableUsername}
+                                    required
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Email</span>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    placeholder="Input email"
+                                    onChange={(e) => { setEmail(e.target.value.trim()) }}
+                                    disabled={disableEmail}
+                                    required
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Password</span>
+                                <input
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => { setPassword(e.target.value) }}
+                                    placeholder="Input password"
+                                    disabled={disablePassword}
+                                    required
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Confirm Password</span>
+                                <input
+                                    type="password"
+                                    value={passwordCheck}
+                                    onChange={(e) => { setPasswordCheck(e.target.value) }}
+                                    placeholder="Confirm password"
+                                    disabled={disablePasswordCheck}
+                                    required
+                                />
+                            </div>
+                        </div>
 
-            <section className={styles.design}>
-                {/* Image Goes Here */}
-            </section>
-
-            <form onSubmit={(e) => { handleSignUp(e) }} className={styles.content}>
-
-                <motion.h1
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1 }}
-                >
-                    Welcome to IchiBank Admin Privilages! &nbsp;
-                    <span>Sign Up</span> Now
-                </motion.h1>
-
-                <br />
-
-                <motion.label
-                    className={styles.form_label}
-                    initial={{ opacity: 0, x: '-15vw' }}
-                    animate={{ opacity: 1, x: '0vw' }}
-                    transition={{ duration: 1, delay: 0 }}
-                >
-                    First Name
-                    <input
-                        className={styles.form_input_name}
-                        type="text"
-                        value={firstName}
-                        placeholder="Input first name"
-                        onChange={(e) => { setFirstName(e.target.value) }}
-                        required />
-                </motion.label>
-
-                <motion.label
-                    className={styles.form_label}
-                    initial={{ opacity: 0, x: '15vw' }}
-                    animate={{ opacity: 1, x: '0vw' }}
-                    transition={{ duration: 1, delay: 0 }}
-                >
-                    Last Name
-                    <input
-                        className={styles.form_input_name}
-                        type="text"
-                        value={lastName}
-                        placeholder="Input last name"
-                        onChange={(e) => { setLastName(e.target.value) }}
-                        required />
-                </motion.label>
-
-                <motion.label
-                    className={styles.form_label}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1 }}
-                >
-                    Username
-                    <input
-                        className={styles.form_input_name}
-                        type="text"
-                        value={username}
-                        placeholder="Input username"
-                        onChange={(e) => { setUsername(e.target.value.trim()) }}
-                        disabled={disableUsername}
-                        required />
-                    <h5>{errorUsername}</h5>
-                </motion.label>
-
-                <motion.label
-                    className={styles.form_label}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.15 }}
-                >
-                    Email
-                    <input
-                        className={styles.form_input}
-                        type="email"
-                        value={email}
-                        placeholder="Input email"
-                        onChange={(e) => { setEmail(e.target.value.trim()) }}
-                        disabled={disableEmail}
-                        required />
-                    <h5>{errorEmail}</h5>
-                </motion.label>
-
-                <br />
-
-                <motion.label
-                    className={styles.form_label}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.25 }}
-                >
-                    Password
-                    <input
-                        className={styles.form_input}
-                        type="password"
-                        value={password}
-                        onChange={(e) => { setPassword(e.target.value) }}
-                        placeholder="Input password"
-                        disabled={disablePassword}
-                        required />
-                    <br />
-                    <input
-                        className={styles.form_input}
-                        type="password"
-                        value={passwordCheck}
-                        onChange={(e) => { setPasswordCheck(e.target.value) }}
-                        placeholder="Confirm password"
-                        disabled={disablePasswordCheck}
-                        required />
-                    <h5>{errorPassword}</h5>
-                </motion.label>
-
-                <button
-                    className={styles.form_input_btn}
-                    type="submit"
-                    disabled={disableButton}>
-                    Sign Up
-                </button>
-
-                <br />
-
-                <p>
-                    Already have an Admin account?
-                    &nbsp;
-                    <span
-                        onClick={handleSignIn}>
-                        Sign in
-                    </span>
-                </p>
-
-            </form>
-
+                        <div className="button">
+                            <button
+                                type="submit"
+                                disabled={disableButton}
+                                className="btn solid left-btn"
+                            >
+                                Sign Up
+                            </button>
+                            <div className="button-down">
+                                <span>Already have a MU Bank Admin Account? </span>
+                                <button
+                                    className="btn solid right-btn"
+                                    onClick={handleSignIn}
+                                >
+                                    Sign In
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+
+        /*         <div>
+        
+                    <form onSubmit={(e) => { handleSignUp(e) }}>
+        
+                        <h1
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 1 }}
+                        >
+                            Welcome to IchiBank Admin Privilages! &nbsp;
+                            <span>Sign Up</span> Now
+                        </h1>
+        
+                        <br />
+        
+                        <label
+                            initial={{ opacity: 0, x: '-15vw' }}
+                            animate={{ opacity: 1, x: '0vw' }}
+                            transition={{ duration: 1, delay: 0 }}
+                        >
+                            First Name
+                            <input
+                                type="text"
+                                value={firstName}
+                                placeholder="Input first name"
+                                onChange={(e) => { setFirstName(e.target.value) }}
+                                required />
+                        </label>
+        
+                        <label
+                            initial={{ opacity: 0, x: '15vw' }}
+                            animate={{ opacity: 1, x: '0vw' }}
+                            transition={{ duration: 1, delay: 0 }}
+                        >
+                            Last Name
+                            <input
+                                type="text"
+                                value={lastName}
+                                placeholder="Input last name"
+                                onChange={(e) => { setLastName(e.target.value) }}
+                                required />
+                        </label>
+        
+                        <label
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 1 }}
+                        >
+                            Username
+                            <input
+                                type="text"
+                                value={username}
+                                placeholder="Input username"
+                                onChange={(e) => { setUsername(e.target.value.trim()) }}
+                                disabled={disableUsername}
+                                required />
+                            <h5>{errorUsername}</h5>
+                        </label>
+        
+                        <label
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 1.15 }}
+                        >
+                            Email
+                            <input
+                                type="email"
+                                value={email}
+                                placeholder="Input email"
+                                onChange={(e) => { setEmail(e.target.value.trim()) }}
+                                disabled={disableEmail}
+                                required />
+                            <h5>{errorEmail}</h5>
+                        </label>
+        
+                        <br />
+        
+                        <label
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 1.25 }}
+                        >
+                            Password
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => { setPassword(e.target.value) }}
+                                placeholder="Input password"
+                                disabled={disablePassword}
+                                required />
+                            <br />
+                            <input
+                                type="password"
+                                value={passwordCheck}
+                                onChange={(e) => { setPasswordCheck(e.target.value) }}
+                                placeholder="Confirm password"
+                                disabled={disablePasswordCheck}
+                                required />
+                            <h5>{errorPassword}</h5>
+                        </label>
+        
+                        <button
+                            type="submit"
+                            disabled={disableButton}>
+                            Sign Up
+                        </button>
+        
+                        <br />
+        
+                        <p>
+                            Already have an Admin account?
+                            &nbsp;
+                            <span
+                                onClick={handleSignIn}>
+                                Sign in
+                            </span>
+                        </p>
+        
+                    </form>
+        
+                </div> */
     )
 }
 

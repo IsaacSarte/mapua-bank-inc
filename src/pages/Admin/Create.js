@@ -2,14 +2,13 @@ import React,{useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
-import styles from './create.module.css';
 
 // Framer Motion
-import { motion } from 'framer-motion/dist/es/';
+import { motion } from 'framer-motion';
 
 // Components
-import AccountNo from '../../components/Admin/Hero/Create/AccountNo'
-import Sidebar from '../../components/Sidebar/Sidebar';
+import AccountNo from '../../Components/Admin/Hero/Create/AccountNo'
+/* import Sidebar from '../../Components/Sidebar/Sidebar'; */
 
 const Create = () => {
 
@@ -117,17 +116,17 @@ const Create = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div>
             
             {adminActive 
                 ? 
                     <>
-                    <Sidebar />
-                    <section className={styles.content}>
+                    {/* <Sidebar /> */}
+                    <section>
 
                         <h1>Create New Account</h1>
 
-                        <form onSubmit={(e) => handleCreate(e)} className={styles.form}>
+                        <form onSubmit={(e) => handleCreate(e)}>
 
                             
                                 
@@ -250,7 +249,7 @@ const Create = () => {
 
                             <button 
                                 type="button">
-                                <NavLink className={styles.navLink} to="/admin" exact>Cancel</NavLink>
+                                <NavLink to="/admin" exact>Cancel</NavLink>
                             </button>
 
                         </form>

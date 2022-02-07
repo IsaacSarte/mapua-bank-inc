@@ -6,13 +6,18 @@ import {
   Switch,
 } from 'react-router-dom';
 
-// CSS
-import './App.css';
-
 // Pages
 import Home from './pages/Home/Home.js';
 import Admin from './pages/Admin/Admin.js';
-import Client from './pages/Client/Client';
+import Client from './pages/Client/Client.js'; 
+
+import Create from './pages/Admin/Create.js';
+import Transaction from './pages/Admin/Transaction.js';
+import Members from './pages/Admin/Members.js';
+import History from './pages/Admin/History.js';
+
+// CSS
+import './App.css';
 
 const App = () => {
   return (
@@ -28,19 +33,19 @@ const App = () => {
           </Route>
 
             <Route path="/admin-create">
-
+              <Create/>
             </Route>
 
             <Route path="/admin-transaction">
-
+              <Transaction/>
             </Route>
 
             <Route path="/admin-members">
-
+              <Members/>
             </Route>
 
             <Route path="/admin-history">
-
+              <History/>
             </Route>
 
           {/* Client/Account Holder Routings */}

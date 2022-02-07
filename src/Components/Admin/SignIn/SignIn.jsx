@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+// Images
+import register from '../../../images/register.svg';
 
 // CSS
-import styles from './signIn.module.css';
-
-// Framer Motion
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import './signin.css';
 
 const SignIn = (props) => {
 
@@ -41,78 +42,113 @@ const SignIn = (props) => {
     }
 
     return (
-        <div className={styles.formContainer}>
-            <div className={styles.container}>
+        <div className="admin-login-container">
+            <div className="forms-container">
+                <div className="login-signup">
+                    <form className="log-in-form">
+                        <h2 class="title">MU Bank Admin Log in</h2>
+                        <div className="input-field">
+                            <input
+                                type="text"
+                                placeholder="Enter your username or email"
+                                value={userEmail}
+                                onChange={(e) => { setUserEmail(e.target.value.trim()); setErrorUserEmail(""); }}
+                                required
+                            />
+                        </div>
+                        <div className="input-field">
+                            <input
+                                type="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => { setPassword(e.target.value); setErrorPassword(""); }}
+                                required
+                            />
+                        </div>
+                        <button
+                            onClick={handleSignIn}
+                            className="btn solid"
+                        >
+                            Log In
+                        </button>
+                    </form>
+                </div>
+            </div>
 
-                <section className={styles.design}>
-                    {/* Image Goes Here */}
-                </section>
-
-                <section className={styles.content}>
-
-                    <motion.h1
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 1 }}
-                    >
-                        Welcome to IchiBank Admin Privilages<br /><br />
-                        <span>Sign In</span> Now Using your IchiBank Email
-                    </motion.h1>
-
-                    <motion.label
-                        className={styles.form_label}
-                        initial={{ opacity: 0, x: '-15vw' }}
-                        animate={{ opacity: 1, x: '0vw' }}
-                        transition={{ duration: 1, delay: 0 }}
-                    >
-                        Username | Email <br /><br />
-                        <input
-                            className={styles.form_input}
-                            type="text"
-                            placeholder="Enter your username or email"
-                            value={userEmail}
-                            onChange={(e) => { setUserEmail(e.target.value.trim()); setErrorUserEmail(""); }}
-                            required
-                        />
-                        <h5>{errorUserEmail}</h5>
-                    </motion.label>
-
-                    <motion.label
-                        className={styles.form_label}
-                        initial={{ opacity: 0, x: '15vw' }}
-                        animate={{ opacity: 1, x: '0vw' }}
-                        transition={{ duration: 1, delay: 0 }}
-                    >
-                        Password <br /><br />
-                        <input
-                            className={styles.form_input}
-                            type="password"
-                            placeholder="Enter your password"
-                            value={password}
-                            onChange={(e) => { setPassword(e.target.value); setErrorPassword(""); }}
-                            required
-                        />
-                        <h5>{errorPassword}</h5>
-                    </motion.label>
-
-                    <button
-                        className={styles.form_input_btn}
-                        onClick={handleSignIn}
-                    >Sign In</button>
-
-                    <p>
-                        Don't have an Admin account?
-                        &nbsp;
-                        <span
-                            onClick={handleSignUp}>
-                            Sign Up
-                        </span>
-                    </p>
-
-                </section>
-
+            <div className="panels-container">
+                <div className="panel left-panel">
+                    <div className="content">
+                        <h3>New to MU Bank Inc?</h3>
+                        <p>Sign Up now if you are an employee to MU Bank Inc</p>
+                        <div className="btn-left-panel">
+                            <button className="btn transparent" id="admin-btn" onClick={handleSignUp}>
+                                Sign Up
+                            </button>
+                            <NavLink to="/">
+                                <button className="btn transparent" id="admin-btn">
+                                    HOME
+                                </button>
+                            </NavLink>
+                        </div>
+                    </div>
+                    <img src={register} alt="log bg" className="image-admin" />
+                </div>
             </div>
         </div>
+        /*         <div>
+                    <div>
+        
+                        <section>
+        
+                            <label
+                                initial={{ opacity: 0, x: '-15vw' }}
+                                animate={{ opacity: 1, x: '0vw' }}
+                                transition={{ duration: 1, delay: 0 }}
+                            >
+                                Username | Email <br /><br />
+                                <input
+                                    type="text"
+                                    placeholder="Enter your username or email"
+                                    value={userEmail}
+                                    onChange={(e) => { setUserEmail(e.target.value.trim()); setErrorUserEmail(""); }}
+                                    required
+                                />
+                                <h5>{errorUserEmail}</h5>
+                            </label>
+        
+                            <label
+                                initial={{ opacity: 0, x: '15vw' }}
+                                animate={{ opacity: 1, x: '0vw' }}
+                                transition={{ duration: 1, delay: 0 }}
+                            >
+                                Password <br /><br />
+                                <input
+                                    type="password"
+                                    placeholder="Enter your password"
+                                    value={password}
+                                    onChange={(e) => { setPassword(e.target.value); setErrorPassword(""); }}
+                                    required
+                                />
+                                <h5>{errorPassword}</h5>
+                            </label>
+        
+                            <button
+                                onClick={handleSignIn}
+                            >Sign In</button>
+        
+                            <p>
+                                Don't have an Admin account?
+                                &nbsp;
+                                <span
+                                    onClick={handleSignUp}>
+                                    Sign Up
+                                </span>
+                            </p>
+        
+                        </section>
+        
+                    </div>
+                </div> */
     )
 }
 
