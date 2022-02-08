@@ -2,9 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
+import './history.css';
 
 // Components
-/* import Sidebar from '../../components/Sidebar/Sidebar'; */
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const History = () => {
 
@@ -18,66 +19,51 @@ const History = () => {
 
     return (
         <div>
-            {/* <Sidebar /> */}
+            <Sidebar />
 
-            <section>
-
-                <div>
-                    <h1>IchiBank Transaction History</h1>
+                <div className="admin-transaction-history">
+                    <h1>MU Bank Inc. Transaction History</h1>
                     <button>
                         <NavLink to="/admin" exact>Go Back</NavLink>
                     </button>
                 </div>
 
-                <div>
+                <div className="transaction-list">
+                    <div>
+                        <h2>Deposit</h2>
+                    </div>
+                    <div>
+                        {deposit.map(obj =>
+                            <div>
+                                <strong>Php {obj.amount}</strong>
+                                <em>Account No. :{obj.sender}</em>
+                            </div>)}
+                    </div>
 
-                    <section>
-                        <div>
-                            <h2>Deposit</h2>
-                        </div>
-                        <div>
-                            {deposit.map(obj =>
-                                <div>
-                                    <strong>¥ {obj.amount}</strong>
-                                    <em>Acct# :{obj.sender}</em>
-                                </div>)}
-                        </div>
-                    </section>
+                    <div>
+                        <h2>Withdraw</h2>
+                    </div>
+                    <div>
+                        {withdraw.map(obj =>
+                            <div>
+                                <strong>Php {obj.amount}</strong>
+                                <em>Account No. :{obj.sender}</em>
+                            </div>)}
+                    </div>
 
-                    <section>
-                        <div>
-                            <h2>Withdraw</h2>
-                        </div>
-                        <div>
-                            {withdraw.map(obj =>
-                                <div>
-                                    <strong>¥ {obj.amount}</strong>
-                                    <em>Acct# :{obj.sender}</em>
-                                </div>)}
-                        </div>
-                    </section>
-
-                    <section>
-                        <div>
-                            <h2>Transfer</h2>
-                        </div>
-                        <div>
-                            {transfer.map(obj =>
-                                <div>
-                                    <em>Acct# :{obj.sender}</em>
-                                    <strong>¥ {obj.amount}</strong>
-                                    <em>Acct# :{obj.receiver}</em>
-                                </div>)}
-                        </div>
-                    </section>
-
-
+                    <div>
+                        <h2>Transfer</h2>
+                    </div>
+                    <div>
+                        {transfer.map(obj =>
+                            <div>
+                                <em>Account No. :{obj.sender}</em>
+                                <strong>Php {obj.amount}</strong>
+                                <em>Account No. :{obj.receiver}</em>
+                            </div>)}
+                    </div>
 
                 </div>   
-                
-            </section>   
-            
-
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 // CSS
 import styles from './withdraw.module.css';
@@ -15,7 +15,7 @@ const Withdraw = () => {
     const [withdraw, setWithdraw] = useState("");
     const [target, setTarget] = useState({});
     const [filter, setFilter] = useState([]);
-    
+
     // Error States
     const [error, setError] = useState("");
 
@@ -27,11 +27,11 @@ const Withdraw = () => {
         } else {
             setTarget({});
         }
-    },[accountNo])
+    }, [accountNo])
 
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== target.accountNo));
-    },[target, withdraw])
+    }, [target, withdraw])
 
     // Event Handlers
     const handleWithdraw = (e) => {
@@ -62,17 +62,17 @@ const Withdraw = () => {
     }
 
     return (
-        <form onSubmit={(e) => {handleWithdraw(e)}}>
+        <form onSubmit={(e) => { handleWithdraw(e) }}>
 
             <label>
                 Account No
-                <input 
+                <input
                     type="text"
                     value={accountNo}
-                    onChange={(e) => {setAccountNo(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setAccountNo(e.target.value) }}
+                    required />
             </label>
-        
+
             <h3>Account Name: {target.firstName} {target.lastName}</h3>
 
             <h3>Balance: {target.balance}</h3>
@@ -82,8 +82,9 @@ const Withdraw = () => {
                 <input
                     type="number"
                     value={withdraw}
-                    onChange={(e) => {setWithdraw(e.target.value); setError("");}}
-                    required/>
+                    min={0}
+                    onChange={(e) => { setWithdraw(e.target.value); setError(""); }}
+                    required />
                 <h5>{error}</h5>
             </label>
 

@@ -1,14 +1,12 @@
-import React,{useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 
 // CSS
-
-// Framer Motion
-import { motion } from 'framer-motion';
+import './create.css';
 
 // Components
 import AccountNo from '../../Components/Admin/Hero/Create/AccountNo'
-/* import Sidebar from '../../Components/Sidebar/Sidebar'; */
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const Create = () => {
 
@@ -117,20 +115,16 @@ const Create = () => {
 
     return (
         <div>
-            
             {adminActive 
                 ? 
                     <>
-                    {/* <Sidebar /> */}
-                    <section>
-
-                        <h1>Create New Account</h1>
-
+                        <Sidebar />
+                        <div className="admin-create-account">
+                            <h1>Create New Account Holder</h1>
+                        </div>
                         <form onSubmit={(e) => handleCreate(e)}>
 
-                            
-                                
-                                <motion.input 
+                                <input 
                                     initial={{ opacity: 0, x: '-15vw' }}
                                     animate={{ opacity: 1, x: '0vw' }}
                                     transition={{ duration: 1, delay: 0 }}
@@ -143,7 +137,7 @@ const Create = () => {
 
                             
                                 
-                                <motion.input
+                                <input
                                     initial={{ opacity: 0, x: '15vw' }}
                                     animate={{ opacity: 1, x: '0vw' }}
                                     transition={{ duration: 1, delay: 0 }}
@@ -156,7 +150,7 @@ const Create = () => {
                             
                             
                                 
-                                <motion.input 
+                                <input 
                                     type="tel"
                                     value={phone}
                                     initial={{ opacity: 0 }}
@@ -170,7 +164,7 @@ const Create = () => {
 
                             
                                 
-                                <motion.input 
+                                <input 
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1, delay: 1.15 }}
@@ -185,7 +179,7 @@ const Create = () => {
 
                             
                                  
-                                <motion.input 
+                                <input 
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1, delay: 1.25 }}
@@ -200,7 +194,7 @@ const Create = () => {
 
                             
                                 
-                                <motion.input 
+                                <input 
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1, delay: 1.35 }}
@@ -211,7 +205,7 @@ const Create = () => {
                                     disabled={disablePassword}
                                     required/>
 
-                                <motion.input 
+                                <input 
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1, delay: 1.35 }}
@@ -223,13 +217,13 @@ const Create = () => {
                                     required/>
                                 <h5>{errorPassword}</h5>
                             
-                            <br />
+                                <br />
 
-                            <AccountNo onGenerate = {onGenerate}/>
+                                <AccountNo onGenerate = {onGenerate}/>
 
-                            
-                                
-                                <motion.input
+                                <br/>
+                                <label>Initial Deposit</label>
+                                <input
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1, delay: 1.5 }}
@@ -241,11 +235,11 @@ const Create = () => {
                                     required/>
                             
 
-                            <button 
-                                type="submit" 
-                                disabled={disableButton}>
-                                Create Account
-                            </button>
+                                <button 
+                                    type="submit" 
+                                    disabled={disableButton}>
+                                    Create Account
+                                </button>
 
                             <button 
                                 type="button">
@@ -253,16 +247,11 @@ const Create = () => {
                             </button>
 
                         </form>
-                    
-                    </section>
                     </>
-
                 : 
                     <div>Please Log In to continue</div>}
-
-        
         </div>
     )
 }
 
-export default Create
+export default Create;

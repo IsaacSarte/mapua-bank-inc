@@ -151,6 +151,7 @@ const SignUp = (props) => {
                                     disabled={disableUsername}
                                     required
                                 />
+                                <h5>{errorUsername}</h5>
                             </div>
                             <div className="input-box">
                                 <span className="details">Email</span>
@@ -162,6 +163,7 @@ const SignUp = (props) => {
                                     disabled={disableEmail}
                                     required
                                 />
+                                <h5>{errorEmail}</h5>
                             </div>
                             <div className="input-box">
                                 <span className="details">Password</span>
@@ -184,6 +186,7 @@ const SignUp = (props) => {
                                     disabled={disablePasswordCheck}
                                     required
                                 />
+                                <h5>{errorPassword}</h5>
                             </div>
                         </div>
 

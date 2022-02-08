@@ -1,9 +1,9 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const ClientDeposit = (props) => {
 
     // Destructured Properties
-    const {clientUser, setUpdate} = props;
+    const { clientUser, setUpdate } = props;
     const memberList = JSON.parse(localStorage.getItem("memberList"));
     const transactionHistory = JSON.parse(localStorage.getItem("transactionHistory"));
     let totalBalance = parseInt(JSON.parse(localStorage.getItem("totalBalance")));
@@ -15,7 +15,7 @@ const ClientDeposit = (props) => {
     // Effects
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== clientUser.accountNo));
-    },[deposit])  
+    }, [deposit])
 
     // Event Handlers
     const handleDeposit = (e) => {
@@ -40,14 +40,15 @@ const ClientDeposit = (props) => {
     }
 
     return (
-        <form onSubmit={(e) => {handleDeposit(e)}}>
+        <form onSubmit={(e) => { handleDeposit(e) }}>
             <label>
                 Deposit Amount
                 <input
                     type="number"
                     value={deposit}
-                    onChange={(e) => {setDeposit(e.target.value)}}
-                    required/>
+                    min={500}
+                    onChange={(e) => { setDeposit(e.target.value) }}
+                    required />
             </label>
 
             <button

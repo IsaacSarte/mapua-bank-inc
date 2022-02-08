@@ -1,9 +1,9 @@
-import React,{useState,useEffect}from 'react'
+import React, { useState, useEffect } from 'react'
 
 const ClientTransfer = (props) => {
 
     // Destructured Properties
-    const {clientUser, setUpdate} = props;
+    const { clientUser, setUpdate } = props;
     const memberList = JSON.parse(localStorage.getItem("memberList"));
     const transactionHistory = JSON.parse(localStorage.getItem("transactionHistory"));
 
@@ -12,7 +12,7 @@ const ClientTransfer = (props) => {
     const [transfer, setTransfer] = useState("");
     const [targetReceiver, setTargetReceiver] = useState({});
     const [filter, setFilter] = useState([]);
-    const [error,setError] = useState("");
+    const [error, setError] = useState("");
 
     // Effects
     useEffect(() => {
@@ -22,11 +22,11 @@ const ClientTransfer = (props) => {
         } else {
             setTargetReceiver({});
         }
-    },[receiverAccount]);
+    }, [receiverAccount]);
 
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== clientUser.accountNo && obj.accountNo !== targetReceiver.accountNo));
-    },[targetReceiver, transfer]);
+    }, [targetReceiver, transfer]);
 
     // Event Handlers
     const handleTransfer = (e) => {
@@ -58,17 +58,17 @@ const ClientTransfer = (props) => {
 
 
     return (
-        <form onSubmit={(e) => {handleTransfer(e)}}>
+        <form onSubmit={(e) => { handleTransfer(e) }}>
             <h2>Receiver</h2>
             <label>
                 Account No
-                <input 
+                <input
                     type="text"
                     value={receiverAccount}
-                    onChange={(e) => {setReceiverAccount(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setReceiverAccount(e.target.value) }}
+                    required />
             </label>
-            
+
             <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
 
             <h3>Balance: {targetReceiver.balance}</h3>
@@ -78,8 +78,9 @@ const ClientTransfer = (props) => {
                 <input
                     type="number"
                     value={transfer}
-                    onChange={(e) => {setTransfer(e.target.value); setError("");}}
-                    required/>
+                    min={1}
+                    onChange={(e) => { setTransfer(e.target.value); setError(""); }}
+                    required />
                 <h5>{error}</h5>
             </label>
 

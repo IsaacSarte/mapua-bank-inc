@@ -1,0 +1,6 @@
+.admin-create-account {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}

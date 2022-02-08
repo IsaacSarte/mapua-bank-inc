@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 const AccountNo = (props) => {
 
     // Destructured Properties
-    const {onGenerate} = props;
+    const { onGenerate } = props;
 
     // States
     const [accountNo, setAccountNo] = useState("")
 
     // Event Handlers
     const onBtnClick = () => {
-        let randomNum = Math.floor(Math.random() * 9000 + 1000 ) ;
+        let randomNum = Math.floor(Math.random() * 9000 + 1000);
         let numberGenerated = "2021-" + randomNum;
         setAccountNo(numberGenerated);
         onGenerate(numberGenerated);
@@ -19,10 +19,10 @@ const AccountNo = (props) => {
     return (
         <label>
             Account No
-            <input 
-                type="text"  
+            <input
+                type="text"
                 value={accountNo}
-                disabled/>
+                disabled />
             <button type="button" onClick={onBtnClick}>Generate</button>
         </label>
     )

@@ -1,9 +1,9 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const ClientWithdraw = (props) => {
 
     // Destructured Properties
-    const {clientUser, setUpdate} = props;
+    const { clientUser, setUpdate } = props;
     const memberList = JSON.parse(localStorage.getItem("memberList"));
     const transactionHistory = JSON.parse(localStorage.getItem("transactionHistory"));
     let totalBalance = parseInt(JSON.parse(localStorage.getItem("totalBalance")));
@@ -16,7 +16,7 @@ const ClientWithdraw = (props) => {
     // Effects
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== clientUser.accountNo));
-    },[withdraw])  
+    }, [withdraw])
 
     // Event Handler
     const handleWithdraw = (e) => {
@@ -43,18 +43,19 @@ const ClientWithdraw = (props) => {
             alert(`Transaction Failed: Insufficient Bank Funds`);
             setError("Transaction Failed: Insufficient Bank Funds");
         }
-        
+
     }
 
     return (
-        <form onSubmit={(e) => {handleWithdraw(e)}}>
+        <form onSubmit={(e) => { handleWithdraw(e) }}>
             <label>
                 Withdraw Amount
                 <input
                     type="number"
                     value={withdraw}
-                    onChange={(e) => {setWithdraw(e.target.value); setError("");}}
-                    required/>
+                    min={1}
+                    onChange={(e) => { setWithdraw(e.target.value); setError(""); }}
+                    required />
                 <h5>{error}</h5>
             </label>
 

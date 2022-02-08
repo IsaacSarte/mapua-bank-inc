@@ -1,16 +1,16 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 // CSS
-import styles from './clientHero.module.css'
+import './clienthero.css';
 
 // Components
 import ClientTransactions from './ClientTransactions/ClientTransactions'
-import ExpenseTracker from '../ExpenseTracker/ExpenseTracker'
+import BudgetPlanner from '../BudgetPlanner/BudgetPlanner'
 
 const ClientHero = (props) => {
 
     // Destructured Properties
-    const {setClientActive} = props;
+    const { setClientActive } = props;
     const memberList = JSON.parse(localStorage.getItem("memberList"));
 
     // State
@@ -21,7 +21,7 @@ const ClientHero = (props) => {
     useEffect(() => {
         let target = memberList.find(obj => obj.accountNo === clientUser.accountNo);
         setClientUser(target);
-    },[update]);
+    }, [update]);
 
     // Event Handlers 
     const handleLogout = () => {
@@ -32,77 +32,77 @@ const ClientHero = (props) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div>
 
-            <div className={styles.core}>
-                <section className={styles.greeting}>
+            <div>
+                <section>
                     <h1>Hi, <span>{clientUser.firstName}</span></h1>
                     <button onClick={handleLogout}>Log Out</button>
                 </section>
 
-                <div className={styles.dataContainer}>
+                <div>
 
-                    <div className={styles.dataLeft}>
+                    <div>
                         {/* <section className={styles.balance}> */}
-                            <h2>Balance</h2>
-                            <h1>¥{clientUser.balance}</h1>
+                        <h2>Balance</h2>
+                        <h1>Php{clientUser.balance}</h1>
                         {/* </section> */}
                     </div>
 
-                    <div className={styles.dataRight}>
-                        <section className={styles.accountDetails}>
+                    <div>
+                        <section>
                             <strong>Username: {clientUser.username}</strong>
                             <strong>Account#: {clientUser.accountNo}</strong>
                         </section>
 
-                        <section className={styles.contactDetails}>
+                        <section>
                             <strong>Email: {clientUser.email}</strong>
                             {clientUser.phone !== ""
-                                ?   <strong>Phone#: {clientUser.phone}</strong>
-                                :   <strong>No contact number available</strong>}
+                                ? <strong>Phone#: {clientUser.phone}</strong>
+                                : <strong>No contact number available</strong>}
                         </section>
                     </div>
 
                 </div>
-                <section className={styles.history}>
+                <section>
                     {clientUser.history.length !== 0
-                        ?   <>
-                                <strong>Latest Transaction:</strong>
-                                <div className={styles.historyOutput}>  
+                        ? <>
+                            <strong>Latest Transaction:</strong>
+                            <div>
                                 {clientUser.history[0].type === "deposit"
-                                    ?   <li>Deposit: ¥{clientUser.history[0].amount}</li>
-                                    :   clientUser.history[0].type === "withdraw"
-                                            ?   <li>Withdraw: ¥{clientUser.history[0].amount}</li>
-                                            :   clientUser.accountNo === clientUser.history[0].sender
-                                                    ?   <li>Transfer: Sent ¥{clientUser.history[0].amount} to Acct#&nbsp;{clientUser.history[0].receiver}</li>
-                                                    :   <li>Transfer: Received ¥{clientUser.history[0].amount} from Acct#&nbsp;{clientUser.history[0].sender}</li>}
-                                </div>
-                            </>
-                        :   <>
-                                <strong>Latest Transaction:</strong>
-                                <div className={styles.historyOutput}>  
-                                    <li>No Transactions Made</li>
-                                </div>
-                            </>}
+                                    ? <li>Deposit: Php{clientUser.history[0].amount}</li>
+                                    : clientUser.history[0].type === "withdraw"
+                                        ? <li>Withdraw: Php{clientUser.history[0].amount}</li>
+                                        : clientUser.accountNo === clientUser.history[0].sender
+                                            ? <li>Transfer: Sent Php{clientUser.history[0].amount} to Acct#&nbsp;{clientUser.history[0].receiver}</li>
+                                            : <li>Transfer: Received Php{clientUser.history[0].amount} from Acct#&nbsp;{clientUser.history[0].sender}</li>}
+                            </div>
+                        </>
+                        : <>
+                            <strong>Latest Transaction:</strong>
+                            <div>
+                                <li>No Transactions Made</li>
+                            </div>
+                        </>}
                 </section>
-                
-                <section className={styles.transaction}>
-                    <ClientTransactions 
+
+                <section>
+                    <ClientTransactions
                         clientUser={clientUser}
-                        setUpdate={setUpdate}/>
+                        setUpdate={setUpdate} />
                 </section>
-            </div>   
-
-            <div className={styles.feature}>
-                <ExpenseTracker
-                    clientUser={clientUser}
-                    setUpdate={setUpdate}/>
             </div>
-            
+
+            <div>
+                <BudgetPlanner
+                    clientUser={clientUser}
+                    setUpdate={setUpdate} />
+            </div>
 
 
 
-            
+
+
         </div>
     )
 }

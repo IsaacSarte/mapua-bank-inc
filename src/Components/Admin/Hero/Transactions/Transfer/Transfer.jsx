@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 // CSS
 import styles from './transfer.module.css';
@@ -26,7 +26,7 @@ const Transfer = () => {
         } else {
             setTargetSender({});
         }
-    },[senderAccount]);
+    }, [senderAccount]);
 
     useEffect(() => {
         let memberReceiver = memberList.find(obj => obj.accountNo === receiverAccount);
@@ -35,12 +35,12 @@ const Transfer = () => {
         } else {
             setTargetReceiver({});
         }
-    },[receiverAccount]);
+    }, [receiverAccount]);
 
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== targetSender.accountNo && obj.accountNo !== targetReceiver.accountNo));
-    },[targetSender, targetReceiver, transfer]);
-    
+    }, [targetSender, targetReceiver, transfer]);
+
     // Event Handlers
     const handleTransfer = (e) => {
         e.preventDefault();
@@ -71,31 +71,31 @@ const Transfer = () => {
 
     return (
 
-       <form onSubmit={(e) => {handleTransfer(e)}}>
-            
+        <form onSubmit={(e) => { handleTransfer(e) }}>
+
             <h2>Sender</h2>
             <label>
                 Account No
-                <input 
+                <input
                     type="text"
                     value={senderAccount}
-                    onChange={(e) => {setSenderAccount(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setSenderAccount(e.target.value) }}
+                    required />
             </label>
-                
+
             <h3>Account Name: {targetSender.firstName} {targetSender.lastName}</h3>
             <h3>Balance: {targetSender.balance}</h3>
 
             <h2>Receiver</h2>
             <label>
                 Account No
-                <input 
+                <input
                     type="text"
                     value={receiverAccount}
-                    onChange={(e) => {setReceiverAccount(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setReceiverAccount(e.target.value) }}
+                    required />
             </label>
-            
+
             <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
 
             <h3>Balance: {targetReceiver.balance}</h3>
@@ -105,8 +105,9 @@ const Transfer = () => {
                 <input
                     type="number"
                     value={transfer}
-                    onChange={(e) => {setTransfer(e.target.value); setError("");}}
-                    required/>
+                    min={1}
+                    onChange={(e) => { setTransfer(e.target.value); setError(""); }}
+                    required />
                 <h5>{error}</h5>
             </label>
 

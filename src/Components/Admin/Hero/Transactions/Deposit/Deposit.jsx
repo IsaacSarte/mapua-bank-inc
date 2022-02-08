@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 // CSS
 import styles from './deposit.module.css';
@@ -24,18 +24,18 @@ const Deposit = () => {
         } else {
             setTarget({});
         }
-    },[accountNo])
+    }, [accountNo])
 
     useEffect(() => {
         setFilter(memberList.filter(obj => obj.accountNo !== target.accountNo));
-    },[target, deposit])
+    }, [target, deposit])
 
     // EventHandlers
     const handleDeposit = (e) => {
         e.preventDefault();
         let history = {
             type: "deposit",
-             amount: deposit,
+            amount: deposit,
             sender: accountNo,
             receiver: ""
         }
@@ -53,17 +53,17 @@ const Deposit = () => {
     }
 
     return (
-        <form onSubmit={(e) => {handleDeposit(e)}}>
-            
+        <form onSubmit={(e) => { handleDeposit(e) }}>
+
             <label>
                 Account No
-                <input 
+                <input
                     type="text"
                     value={accountNo}
-                    onChange={(e) => {setAccountNo(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setAccountNo(e.target.value) }}
+                    required />
             </label>
-        
+
             <h3>Account Name: {target.firstName} {target.lastName}</h3>
 
             <h3>Balance: {target.balance}</h3>
@@ -73,8 +73,9 @@ const Deposit = () => {
                 <input
                     type="number"
                     value={deposit}
-                    onChange={(e) => {setDeposit(e.target.value)}}
-                    required/>
+                    onChange={(e) => { setDeposit(e.target.value) }}
+                    min={500}
+                    required />
             </label>
 
             <button

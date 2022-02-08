@@ -1,0 +1,12 @@
+.admin-member-history {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.member-list {
+    display: grid;
+    place-items: center;
+    margin-top: 5rem;
+}

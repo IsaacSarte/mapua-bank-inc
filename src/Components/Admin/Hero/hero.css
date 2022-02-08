@@ -1,0 +1,12 @@
+.admin-logged-in {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.admin-trans-container {
+    display: grid;
+    place-items: center;
+    margin-top: 5rem;
+}
