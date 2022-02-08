@@ -17,15 +17,14 @@ const AccountNo = (props) => {
     };
 
     return (
-        <label>
-            Account No
+        <>
             <input
                 type="text"
                 value={accountNo}
                 disabled />
-            <button type="button" onClick={onBtnClick}>Generate</button>
-        </label>
+            <button type="button" onClick={onBtnClick} className="btn-generate">Click to Generate</button>
+        </>
     )
 }
 
-export default AccountNo
+export default AccountNo;

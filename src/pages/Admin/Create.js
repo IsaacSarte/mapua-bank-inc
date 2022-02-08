@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 
+// Images
+import logo from '../../images/logo.png';
+import waves2 from '../../images/waves2.svg';
+
 // CSS
 import './create.css';
 
@@ -118,135 +122,159 @@ const Create = () => {
             {adminActive 
                 ? 
                     <>
+                        <NavLink to="/">
+                            <img src={logo} alt="logo header" className="dashboard-logo" />
+                        </NavLink>
                         <Sidebar />
                         <div className="admin-create-account">
-                            <h1>Create New Account Holder</h1>
+                            <div className="admin-create-container">
+                                <div className="admin-create-title">
+                                    <h1>Create New Account Holder</h1>
+                                </div>
+                                <div className="admin-create-content">
+                                <form onSubmit={(e) => handleCreate(e)} className="form">
+                                    <div className="admin-create-details">
+                                        <div className="input-box">
+                                            <span className="details">First Name</span>
+                                            <input 
+                                                initial={{ opacity: 0, x: '-15vw' }}
+                                                animate={{ opacity: 1, x: '0vw' }}
+                                                transition={{ duration: 1, delay: 0 }}
+                                                type="text" 
+                                                value={firstName} 
+                                                placeholder="First Name"
+                                                onChange={(e) => {setFirstName(e.target.value)}}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Last Name</span>
+                                            <input
+                                                initial={{ opacity: 0, x: '15vw' }}
+                                                animate={{ opacity: 1, x: '0vw' }}
+                                                transition={{ duration: 1, delay: 0 }}
+                                                type="text"
+                                                value={lastName}
+                                                placeholder="Last Name"
+                                                onChange={(e) => {setLastName(e.target.value)}}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Phone Number</span>
+                                            <input 
+                                                type="tel"
+                                                value={phone}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1 }}
+                                                placeholder="Phone Number"
+                                                pattern="[0][9][0-9]{2}-[0-9]{3}-[0-9]{4}"
+                                                placeholder="09XX-XXX-XXXX"
+                                                onChange={(e) => {setPhone(e.target.value)}}
+                                            />
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Email</span>
+                                            <input 
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1.15 }}
+                                                type="email" 
+                                                value={email}
+                                                placeholder="Email"
+                                                onChange={(e) => {setEmail(e.target.value.trim())}}
+                                                disabled={disableEmail}
+                                                required
+                                            />
+                                            <h5>{errorEmail}</h5>
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Username</span>
+                                            <input 
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1.25 }}
+                                                type="text" 
+                                                value={username}
+                                                placeholder="Username"
+                                                onChange={(e) => {setUsername(e.target.value.trim())}}
+                                                disabled={disableUsername}
+                                                required
+                                            />
+                                            <h5>{errorUsername}</h5>
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Password</span>
+                                            <input 
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1.35 }}
+                                                type="password" 
+                                                value={password}
+                                                onChange={(e) => {setPassword(e.target.value)}}
+                                                placeholder="Input password"
+                                                disabled={disablePassword}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Confirm Password</span>
+                                            <input 
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1.35 }}
+                                                type="password" 
+                                                value={passwordCheck}
+                                                onChange={(e) => {setPasswordCheck(e.target.value)}}
+                                                placeholder="Confirm password"
+                                                disabled={disablePasswordCheck}
+                                                required
+                                            />
+                                            <h5>{errorPassword}</h5>
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Account Number</span>
+                                            <AccountNo onGenerate = {onGenerate}/>
+                                        </div>
+                                        <div className="input-box">
+                                            <span className="details">Initial Deposit</span>
+                                            <input
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1.5 }}
+                                                type="number"
+                                                value={balance}
+                                                placeholder="Min: 2000"
+                                                min="2000"
+                                                onChange={(e) => {setBalance(e.target.value)}}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="button">
+                                        <button 
+                                            type="submit" 
+                                            disabled={disableButton}
+                                            className="btn solid left-btn"
+                                        >
+                                            Create Account
+                                        </button>
+                                        <div className="button-down">
+                                            <button 
+                                                type="button"
+                                                className="btn solid right-btn"
+                                            >
+                                                <NavLink to="/admin" exact className="admin-back-btn">Cancel</NavLink>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
                         </div>
-                        <form onSubmit={(e) => handleCreate(e)}>
-
-                                <input 
-                                    initial={{ opacity: 0, x: '-15vw' }}
-                                    animate={{ opacity: 1, x: '0vw' }}
-                                    transition={{ duration: 1, delay: 0 }}
-                                    type="text" 
-                                    value={firstName} 
-                                    placeholder="First Name"
-                                    onChange={(e) => {setFirstName(e.target.value)}}
-                                    required/>
-                            
-
-                            
-                                
-                                <input
-                                    initial={{ opacity: 0, x: '15vw' }}
-                                    animate={{ opacity: 1, x: '0vw' }}
-                                    transition={{ duration: 1, delay: 0 }}
-                                    type="text"
-                                    value={lastName}
-                                    placeholder="Last Name"
-                                    onChange={(e) => {setLastName(e.target.value)}}
-                                    required/>
-                            
-                            
-                            
-                                
-                                <input 
-                                    type="tel"
-                                    value={phone}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1 }}
-                                    placeholder="Phone Number"
-                                    pattern="[0][9][0-9]{2}-[0-9]{3}-[0-9]{4}"
-                                    placeholder="09XX-XXX-XXXX"
-                                    onChange={(e) => {setPhone(e.target.value)}}/>
-                            
-
-                            
-                                
-                                <input 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1.15 }}
-                                    type="email" 
-                                    value={email}
-                                    placeholder="Email"
-                                    onChange={(e) => {setEmail(e.target.value.trim())}}
-                                    disabled={disableEmail}
-                                    required/>
-                                <h5>{errorEmail}</h5>
-                            
-
-                            
-                                 
-                                <input 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1.25 }}
-                                    type="text" 
-                                    value={username}
-                                    placeholder="Username"
-                                    onChange={(e) => {setUsername(e.target.value.trim())}}
-                                    disabled={disableUsername}
-                                    required/>
-                                <h5>{errorUsername}</h5>
-                            
-
-                            
-                                
-                                <input 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1.35 }}
-                                    type="password" 
-                                    value={password}
-                                    onChange={(e) => {setPassword(e.target.value)}}
-                                    placeholder="Input password"
-                                    disabled={disablePassword}
-                                    required/>
-
-                                <input 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1.35 }}
-                                    type="password" 
-                                    value={passwordCheck}
-                                    onChange={(e) => {setPasswordCheck(e.target.value)}}
-                                    placeholder="Confirm password"
-                                    disabled={disablePasswordCheck}
-                                    required/>
-                                <h5>{errorPassword}</h5>
-                            
-                                <br />
-
-                                <AccountNo onGenerate = {onGenerate}/>
-
-                                <br/>
-                                <label>Initial Deposit</label>
-                                <input
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 1.5 }}
-                                    type="number"
-                                    value={balance}
-                                    placeholder="Min: 2000"
-                                    min="2000"
-                                    onChange={(e) => {setBalance(e.target.value)}}
-                                    required/>
-                            
-
-                                <button 
-                                    type="submit" 
-                                    disabled={disableButton}>
-                                    Create Account
-                                </button>
-
-                            <button 
-                                type="button">
-                                <NavLink to="/admin" exact>Cancel</NavLink>
-                            </button>
-
-                        </form>
+                        <img src={waves2} alt="create-svg" className="admin-create-wave"/>
                     </>
                 : 
                     <div>Please Log In to continue</div>}

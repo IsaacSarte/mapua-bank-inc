@@ -123,7 +123,8 @@ const Button = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  margin: 0.5rem 0 0 0.5rem;
+  margin: 0.5rem 0 0 0.25rem;
+  transform: translateY(-2vh);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -152,7 +153,7 @@ const SidebarContainer = styled.div`
   background-color: #6d1324;
   width: 3.5rem;
   height: 80vh;
-  margin-top: 1rem;
+  margin-top: 0rem;
   border-radius: 0 25px 25px 0;
   padding: 1rem 0;
   display: flex;
