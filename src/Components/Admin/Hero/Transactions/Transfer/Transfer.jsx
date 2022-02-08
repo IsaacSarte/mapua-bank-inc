@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // CSS
-import styles from './transfer.module.css';
+import '../trans.css';
 
 const Transfer = () => {
 
@@ -71,11 +71,12 @@ const Transfer = () => {
 
     return (
 
-        <form onSubmit={(e) => { handleTransfer(e) }}>
+        <form onSubmit={(e) => { handleTransfer(e) }} className="form-trans">
 
             <h2>Sender</h2>
+            <br />
             <label>
-                Account No
+                Account Number {""}
                 <input
                     type="text"
                     value={senderAccount}
@@ -83,12 +84,18 @@ const Transfer = () => {
                     required />
             </label>
 
-            <h3>Account Name: {targetSender.firstName} {targetSender.lastName}</h3>
-            <h3>Balance: {targetSender.balance}</h3>
+            <br />
 
+            <div className="trans-details">
+                <h3>Account Name: {targetSender.firstName} {targetSender.lastName}</h3>
+                <h3>Balance: {targetSender.balance}</h3>
+            </div>
+
+            <br />
             <h2>Receiver</h2>
+            <br />
             <label>
-                Account No
+                Account Number {""}
                 <input
                     type="text"
                     value={receiverAccount}
@@ -96,12 +103,17 @@ const Transfer = () => {
                     required />
             </label>
 
-            <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
+            <br />
 
-            <h3>Balance: {targetReceiver.balance}</h3>
+            <div className="trans-details">
+                <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
+                <h3>Balance: {targetReceiver.balance}</h3>
+            </div>
+
+            <br />
 
             <label>
-                Transfer Amount
+                Transfer Amount {""}
                 <input
                     type="number"
                     value={transfer}
@@ -112,7 +124,9 @@ const Transfer = () => {
             </label>
 
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Transfer
             </button>
 

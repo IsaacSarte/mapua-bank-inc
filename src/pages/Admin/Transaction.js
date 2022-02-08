@@ -1,4 +1,9 @@
-import React,{useState} from 'react'
+import React, {useState} from 'react';
+import { NavLink } from 'react-router-dom';
+
+// Images
+import logo from '../../images/logo.png';
+import waves4 from '../../images/waves4.svg';
 
 // CSS
 import './transactions.css';
@@ -17,10 +22,19 @@ const Transaction = () => {
     const [transfer, setTransfer] = useState(false);
 
     return (
-        <>
+        <div>
+            <NavLink to="/" className="nav">
+                <img src={logo} alt="logo header" className="dashboard-logo" />
+            </NavLink>
             <Sidebar/>
-            <div className="admin-transactions-title">
-                <h1>MU Bank Inc. Account Holders Transaction</h1>
+            <div className="admin-logged-in">
+                <h1>MU Bank Inc. <br/> Create Transaction </h1>
+                <button 
+                    type="button"
+                    className="btn solid"
+                >
+                    <NavLink to="/admin" exact className="admin-back-btn">GO Back</NavLink>
+                </button>
             </div>
             
             <div className="admin-transactions-container">
@@ -61,9 +75,9 @@ const Transaction = () => {
                             ? <Withdraw/>
                             : <Transfer/>}
                 </div>
-                
             </div>
-        </>
+            <img src={waves4} alt="admin-logo" className="admin-wave"/>
+        </div>
     )
 }
 

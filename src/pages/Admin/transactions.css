@@ -7,7 +7,7 @@
 
 .admin-transactions-container {
     width: 100vw;
-    height: 80vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,9 +35,13 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+    font-weight: 550;
     outline: none;
-    background-color: white;
+    background-color: rgb(71, 71, 71);
+    color: #fbfbfb;
     cursor: pointer;
+    /* text-decoration: underline 2px #7e172a; */
+    text-transform: uppercase;
 }
 
 .admin-transactions {
@@ -45,7 +49,16 @@
     height: 60vh;
     padding: 2rem;
     border: 1px solid black;
-    background-color: skyblue;
+    background-color: rgb(56, 56, 56);
+    color: #fbfbfb;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+}
+
+@media screen and (max-width: 500px) {
+    .admin-transactions-container {
+        margin-top: 1rem;
+        height: 65vh;
+        overflow: hidden;
+    }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // CSS
-import styles from './deposit.module.css';
+import '../trans.css';
 
 const Deposit = () => {
 
@@ -53,33 +53,42 @@ const Deposit = () => {
     }
 
     return (
-        <form onSubmit={(e) => { handleDeposit(e) }}>
+        <form onSubmit={(e) => { handleDeposit(e) }} className="form-trans">
 
             <label>
-                Account No
+                Account Number {""}
                 <input
                     type="text"
                     value={accountNo}
                     onChange={(e) => { setAccountNo(e.target.value) }}
-                    required />
+                    required
+                />
             </label>
 
-            <h3>Account Name: {target.firstName} {target.lastName}</h3>
+            <br />
 
-            <h3>Balance: {target.balance}</h3>
+            <div className="trans-details">
+                <h3>Account Name: {target.firstName} {target.lastName}</h3>
+                <h3>Balance: {target.balance}</h3>
+            </div>
+
+            <br />
 
             <label>
-                Deposit Amount
+                Deposit Amount {""}
                 <input
                     type="number"
                     value={deposit}
                     onChange={(e) => { setDeposit(e.target.value) }}
-                    min={500}
-                    required />
+                    min={1000}
+                    required
+                />
             </label>
 
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Deposit
             </button>
 

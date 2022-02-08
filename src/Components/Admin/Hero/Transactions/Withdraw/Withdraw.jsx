@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // CSS
-import styles from './withdraw.module.css';
+import '../trans.css';
 
 const Withdraw = () => {
 
@@ -62,10 +62,10 @@ const Withdraw = () => {
     }
 
     return (
-        <form onSubmit={(e) => { handleWithdraw(e) }}>
+        <form onSubmit={(e) => { handleWithdraw(e) }} className="form-trans">
 
             <label>
-                Account No
+                Account Number {""}
                 <input
                     type="text"
                     value={accountNo}
@@ -73,23 +73,30 @@ const Withdraw = () => {
                     required />
             </label>
 
-            <h3>Account Name: {target.firstName} {target.lastName}</h3>
+            <br />
 
-            <h3>Balance: {target.balance}</h3>
+            <div className="trans-details">
+                <h3>Account Name: {target.firstName} {target.lastName}</h3>
+                <h3>Balance: {target.balance}</h3>
+            </div>
+
+            <br />
 
             <label>
-                Withdraw Amount
+                Withdraw Amount {""}
                 <input
                     type="number"
                     value={withdraw}
-                    min={0}
+                    min={500}
                     onChange={(e) => { setWithdraw(e.target.value); setError(""); }}
                     required />
                 <h5>{error}</h5>
             </label>
 
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Withdraw
             </button>
 

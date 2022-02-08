@@ -1,0 +1,29 @@
+.form-trans {
+    margin-top: 5rem;
+}
+
+.form-trans label {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.form-trans label input {
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.yellow {
+    background-color: rgb(92, 92, 1) !important;
+}
+
+@media screen and (max-width: 768px) {
+    .form-trans {
+        margin-top: 0rem;
+    }
+}
