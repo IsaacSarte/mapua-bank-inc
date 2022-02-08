@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useReducer } from 'react';
+import { NavLink } from 'react-router-dom';
+
+// Images
+import logo from '../../../images/logo.png';
 
 // CSS
 import './signup.css';
@@ -113,105 +117,110 @@ const SignUp = (props) => {
     }
 
     return (
-        <div className="admin-sign-up">
-            <div className="admin-signup-container">
-                <div className="signup-title">
-                    <h2>Welcome to MU Bank Inc Admin Privilages</h2>
-                </div>
-                <div className="signup-content">
-                    <form onSubmit={(e) => { handleSignUp(e) }} className="form">
-                        <div className="admin-details">
-                            <div className="input-box">
-                                <span className="details">First Name</span>
-                                <input
-                                    type="text"
-                                    value={firstName}
-                                    placeholder="Input first name"
-                                    onChange={(e) => { setFirstName(e.target.value) }}
-                                    required
-                                />
+        <>
+            <NavLink to="/">
+                <img src={logo} alt="logo header" className="sign-up-logo" />
+            </NavLink>
+            <div className="admin-sign-up">
+                <div className="admin-signup-container">
+                    <div className="signup-title">
+                        <h2>Welcome to MU Bank Inc Admin Privilages</h2>
+                    </div>
+                    <div className="signup-content">
+                        <form onSubmit={(e) => { handleSignUp(e) }} className="form">
+                            <div className="admin-details">
+                                <div className="input-box">
+                                    <span className="details">First Name</span>
+                                    <input
+                                        type="text"
+                                        value={firstName}
+                                        placeholder="Input first name"
+                                        onChange={(e) => { setFirstName(e.target.value) }}
+                                        required
+                                    />
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Last Name</span>
+                                    <input
+                                        type="text"
+                                        value={lastName}
+                                        placeholder="Input last name"
+                                        onChange={(e) => { setLastName(e.target.value) }}
+                                        required
+                                    />
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Username</span>
+                                    <input
+                                        type="text"
+                                        value={username}
+                                        placeholder="Input username"
+                                        onChange={(e) => { setUsername(e.target.value.trim()) }}
+                                        disabled={disableUsername}
+                                        required
+                                    />
+                                    <h5>{errorUsername}</h5>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Email</span>
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        placeholder="Input email"
+                                        onChange={(e) => { setEmail(e.target.value.trim()) }}
+                                        disabled={disableEmail}
+                                        required
+                                    />
+                                    <h5>{errorEmail}</h5>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Password</span>
+                                    <input
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => { setPassword(e.target.value) }}
+                                        placeholder="Input password"
+                                        disabled={disablePassword}
+                                        required
+                                    />
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Confirm Password</span>
+                                    <input
+                                        type="password"
+                                        value={passwordCheck}
+                                        onChange={(e) => { setPasswordCheck(e.target.value) }}
+                                        placeholder="Confirm password"
+                                        disabled={disablePasswordCheck}
+                                        required
+                                    />
+                                    <h5>{errorPassword}</h5>
+                                </div>
                             </div>
-                            <div className="input-box">
-                                <span className="details">Last Name</span>
-                                <input
-                                    type="text"
-                                    value={lastName}
-                                    placeholder="Input last name"
-                                    onChange={(e) => { setLastName(e.target.value) }}
-                                    required
-                                />
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Username</span>
-                                <input
-                                    type="text"
-                                    value={username}
-                                    placeholder="Input username"
-                                    onChange={(e) => { setUsername(e.target.value.trim()) }}
-                                    disabled={disableUsername}
-                                    required
-                                />
-                                <h5>{errorUsername}</h5>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Email</span>
-                                <input
-                                    type="email"
-                                    value={email}
-                                    placeholder="Input email"
-                                    onChange={(e) => { setEmail(e.target.value.trim()) }}
-                                    disabled={disableEmail}
-                                    required
-                                />
-                                <h5>{errorEmail}</h5>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Password</span>
-                                <input
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => { setPassword(e.target.value) }}
-                                    placeholder="Input password"
-                                    disabled={disablePassword}
-                                    required
-                                />
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Confirm Password</span>
-                                <input
-                                    type="password"
-                                    value={passwordCheck}
-                                    onChange={(e) => { setPasswordCheck(e.target.value) }}
-                                    placeholder="Confirm password"
-                                    disabled={disablePasswordCheck}
-                                    required
-                                />
-                                <h5>{errorPassword}</h5>
-                            </div>
-                        </div>
 
-                        <div className="button">
-                            <button
-                                type="submit"
-                                disabled={disableButton}
-                                className="btn solid left-btn"
-                            >
-                                Sign Up
-                            </button>
-                            <div className="button-down">
-                                <span>Already have a MU Bank Admin Account? </span>
+                            <div className="button">
                                 <button
-                                    className="btn solid right-btn"
-                                    onClick={handleSignIn}
+                                    type="submit"
+                                    disabled={disableButton}
+                                    className="btn solid left-btn"
                                 >
-                                    Sign In
+                                    Sign Up
                                 </button>
+                                <div className="button-down">
+                                    <span>Already have a MU Bank Admin Account? </span>
+                                    <button
+                                        className="btn solid right-btn"
+                                        onClick={handleSignIn}
+                                    >
+                                        Sign In
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
 
         /*         <div>
         

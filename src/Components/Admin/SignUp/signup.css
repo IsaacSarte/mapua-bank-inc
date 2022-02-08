@@ -1,3 +1,10 @@
+.sign-up-logo {
+    width: 150px;
+    position: fixed;
+    margin-left: 15%;
+    margin-top: 2vh;
+}
+
 .admin-sign-up {
     height: 100vh;
     display: flex;
@@ -135,7 +142,7 @@
 
     .left-btn,
     .right-btn {
-        background-color: #6d1324;
+        background-color: #6d1324 !important;
     }
 
     .left-btn:hover,

@@ -33,6 +33,7 @@ const SignIn = (props) => {
                 localStorage.setItem("adminActive", true);
                 localStorage.setItem("adminUser", JSON.stringify(target));
                 setAdminActive(true);
+                console.log('Admin logged in successfully');
             }
         }
     }
@@ -56,6 +57,7 @@ const SignIn = (props) => {
                                 required
                             />
                         </div>
+                        <h5>{errorUserEmail}</h5>
                         <div className="input-field">
                             <input
                                 type="password"
@@ -65,7 +67,9 @@ const SignIn = (props) => {
                                 required
                             />
                         </div>
+                        <h5>{errorPassword}</h5>
                         <button
+                            type="button"
                             onClick={handleSignIn}
                             className="btn solid"
                         >

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Images
+import logo from '../../../images/logo.png';
+import waves from '../../../images/waves.svg';
+
 // CSS
 import './hero.css';
 
@@ -34,25 +38,30 @@ const Hero = (props) => {
 
     return (
         <>
+            <NavLink to="/">
+                <img src={logo} alt="logo header" className="dashboard-logo" />
+            </NavLink>
             <Sidebar />
             <div className="admin-logged-in">
-                <h1>Hi, {adminUser.firstName} || MU Bank Inc. Admin </h1>
-                <button onClick={handleLogout}>Logout</button>
+                <h1>Hi {adminUser.firstName}!<br /> MU Bank Inc. Admin </h1>
+                <button onClick={handleLogout} className="logout-btn">Logout</button>
             </div>
 
             <div className="admin-trans-container">
 
                 <div className="admin-trans-card">
-                    <h2>MU Total Bank Balance: Php {bankBalance}</h2>
+                    <h2>MU Total Bank Balance: <br /> Php {bankBalance}</h2>
                 </div>
                 <div className="admin-trans-card">
-                    <h2>MU All Bank Account Holders: {bankMembers}</h2>
+                    <h2>MU All Bank Account Holders: <br /> {bankMembers}</h2>
                 </div>
                 <div className="admin-trans-card">
-                    <h2>MU Total Bank Transactions: {bankTransactions}</h2>
+                    <h2>MU Total Bank Transactions: <br /> {bankTransactions}</h2>
                 </div>
 
             </div>
+
+            <img src={waves} alt="wave bg" className="admin-wave" />
         </>
     )
 }

@@ -1,3 +1,10 @@
+.dashboard-logo {
+    width: 150px;
+    position: fixed;
+    margin-left: 15%;
+    margin-top: -5vh;
+}
+
 .admin-logged-in {
     display: grid;
     place-items: center;
@@ -5,8 +12,67 @@
     margin-top: 5rem;
 }
 
+.logout-btn {
+    width: 150px;
+    background-color: #94192F;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.logout-btn:hover {
+    background-color: #6d1324;
+}
+
 .admin-trans-container {
     display: grid;
     place-items: center;
-    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.admin-trans-card {
+    margin-top: 2.5rem;
+    background: #444;
+    color: #fff;
+    border-radius: .5rem;
+    padding: 2rem;
+    width: 27rem;
+}
+
+.admin-wave {
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    width: 100vw;
+    opacity: 0.95;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 390px) {
+    .admin-trans-container {
+        overflow: hidden;
+    }
+
+    .admin-trans-card {
+        font-size: 0.65rem;
+        width: 14rem;
+    }
+
+    .admin-logged-in h1 {
+        font-size: 1.5rem;
+    }
+
+    .admin-wave {
+        width: 110vw;
+    }
 }
