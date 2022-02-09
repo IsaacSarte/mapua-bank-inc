@@ -8,6 +8,9 @@ import logo from '../images/logo.png';
 // CSS
 import './index.css';
 
+// Framer Motion
+import { motion } from 'framer-motion';
+
 const Navbar = () => {
 
     const [nav, setnav] = useState(false);
@@ -24,7 +27,11 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground);
 
     return (
-        <nav className={nav ? "nav active" : "nav"}>
+        <motion.nav className={nav ? "nav active" : "nav"}
+            initial={{ marginTop: '-5rem', opacity: 0 }}
+            animate={{ marginTop: '1rem', opacity: 1 }}
+            transition={{ duration: 1, delay: 0 }}
+        >
             <NavLink to='/' className='logo' smooth={true} duration={1000}>
                 <img src={logo} alt='' />
             </NavLink>
@@ -37,7 +44,7 @@ const Navbar = () => {
                 <li><Link to="products" smooth={true} duration={1000}>Services</Link></li>
                 <li><Link to="about" smooth={true} duration={1000}>About</Link></li>
             </ul>
-        </nav>
+        </motion.nav>
     )
 }
 

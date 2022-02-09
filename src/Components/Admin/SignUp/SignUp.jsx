@@ -7,6 +7,9 @@ import logo from '../../../images/logo.png';
 // CSS
 import './signup.css';
 
+// Framer Motion
+import { motion } from 'framer-motion';
+
 const emailReducer = (state, action) => {
     return {};
 };
@@ -127,7 +130,11 @@ const SignUp = (props) => {
                         <h2>Welcome to MU Bank Inc Admin Privilages</h2>
                     </div>
                     <div className="signup-content">
-                        <form onSubmit={(e) => { handleSignUp(e) }} className="form">
+                        <motion.form onSubmit={(e) => { handleSignUp(e) }} className="form"
+                            initial={{ opacity: 0, marginLeft: '-5rem' }}
+                            animate={{ opacity: 1, marginLeft: '0rem' }}
+                            transition={{ duration: 0.5, delay: 0 }}
+                        >
                             <div className="admin-details">
                                 <div className="input-box">
                                     <span className="details">First Name</span>
@@ -216,7 +223,7 @@ const SignUp = (props) => {
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </motion.form>
                     </div>
                 </div>
             </div>

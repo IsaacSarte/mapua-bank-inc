@@ -7,6 +7,9 @@ import register from '../../../images/register.svg';
 // CSS
 import './signin.css';
 
+// Framer Motion
+import { motion } from 'framer-motion';
+
 const SignIn = (props) => {
 
     // Destructured Properties
@@ -82,7 +85,13 @@ const SignIn = (props) => {
             <div className="panels-container">
                 <div className="panel left-panel">
                     <div className="content">
-                        <h3>New to MU Bank Inc?</h3>
+                        <motion.h3
+                            initial={{ opacity: 0, marginLeft: '-5rem' }}
+                            animate={{ opacity: 1, marginLeft: '0rem' }}
+                            transition={{ duration: 1, delay: 0 }}
+                        >
+                            New to MU Bank Inc?
+                        </motion.h3>
                         <p>Sign Up now if you are an employee to MU Bank Inc</p>
                         <div className="btn-left-panel">
                             <button className="btn transparent" id="admin-btn" onClick={handleSignUp}>
@@ -95,7 +104,11 @@ const SignIn = (props) => {
                             </NavLink>
                         </div>
                     </div>
-                    <img src={register} alt="log bg" className="image-admin" />
+                    <motion.img src={register} alt="log bg" className="image-admin"
+                        initial={{ opacity: 0, marginLeft: '-5rem' }}
+                        animate={{ opacity: 1, marginLeft: '0rem' }}
+                        transition={{ duration: 1, delay: 0 }}
+                    />
                 </div>
             </div>
         </div>

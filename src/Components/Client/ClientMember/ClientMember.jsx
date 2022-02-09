@@ -7,6 +7,9 @@ import log from '../../../images/log.svg';
 // CSS
 import './clientmember.css';
 
+// Framer Motion
+import { motion } from 'framer-motion';
+
 const ClientMember = (props) => {
 
     // Destructured Properties
@@ -76,16 +79,32 @@ const ClientMember = (props) => {
                         <p className="social-text">Follow us with our social platforms</p>
                         <div className="social-media">
                             <a href="#" className="social-icon">
-                                <i className="fab fa-facebook-f"></i>
+                                <motion.i className="fab fa-facebook-f"
+                                    initial={{ opacity: 0, marginTop: '5rem' }}
+                                    animate={{ opacity: 1, marginTop: '0rem' }}
+                                    transition={{ duration: 1, delay: 0 }}
+                                ></motion.i>
                             </a>
                             <a href="#" className="social-icon">
-                                <i className="fab fa-twitter"></i>
+                                <motion.i className="fab fa-twitter"
+                                    initial={{ opacity: 0, marginLeft: '-5rem' }}
+                                    animate={{ opacity: 1, marginLeft: '0rem' }}
+                                    transition={{ duration: 1, delay: 0.25 }}
+                                ></motion.i>
                             </a>
                             <a href="#" className="social-icon">
-                                <i className="fab fa-google"></i>
+                                <motion.i className="fab fa-google"
+                                    initial={{ opacity: 0, marginLeft: '-5rem' }}
+                                    animate={{ opacity: 1, marginLeft: '0rem' }}
+                                    transition={{ duration: 1, delay: 0.5 }}
+                                ></motion.i>
                             </a>
                             <a href="#" className="social-icon">
-                                <i className="fab fa-linkedin-in"></i>
+                                <motion.i className="fab fa-linkedin-in"
+                                    initial={{ opacity: 0, marginLeft: '-5rem' }}
+                                    animate={{ opacity: 1, marginLeft: '0rem' }}
+                                    transition={{ duration: 1, delay: 0.75 }}
+                                ></motion.i>
                             </a>
                         </div>
                     </form>
@@ -95,7 +114,13 @@ const ClientMember = (props) => {
             <div className="panels-container">
                 <div className="panel left-panel">
                     <div className="content">
-                        <h3>One of Us?</h3>
+                        <motion.h3
+                            initial={{ opacity: 0, marginTop: '-5rem' }}
+                            animate={{ opacity: 1, marginTop: '0rem' }}
+                            transition={{ duration: 1, delay: 0 }}
+                        >
+                            One of Us?
+                        </motion.h3>
                         <p>Log in now using your Admin email to get admin privilages</p>
                         <div className="btn-left-panel">
                             <NavLink to="/admin">
