@@ -85,6 +85,8 @@ const Deposit = () => {
                 />
             </label>
 
+            <br />
+
             <button
                 type="submit"
                 className="btn solid yellow"

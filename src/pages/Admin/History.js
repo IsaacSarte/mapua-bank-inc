@@ -27,50 +27,72 @@ const History = () => {
             </NavLink>
             <Sidebar />
             <div className="admin-logged-in">
-                <h1>MU Bank Inc. <br/> Transaction History</h1>
+                <h1>Transaction History</h1>
                 <button className="btn solid">
                     <NavLink to="/admin" exact>Go Back</NavLink>
                 </button>
             </div>
 
-            <div className="transaction-list">
-                <div className="trans-card dep">
-                    <h2>Deposit</h2>
-                    <br/>
-                    <div>
+            <caption>Transaction Summary</caption>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th scope="col">Deposit</th>
+                    <th scope="col">Withdraw</th>
+                    <th scope="col">Sender</th>
+                    <th scope="col">Receiver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td data-label="Deposit">
                         {deposit.map(obj =>
-                            <div className="trans-dets">
-                                <strong>Php {obj.amount}</strong><br/>
-                                <em>Account No. :{obj.sender}</em>
-                            </div>)}
-                    </div>
-                </div>
-
-                <div className="trans-card witd">
-                    <h2>Withdraw</h2>
-                    <br/>
-                    <div>
+                            <>
+                                <div className="trans-dets">
+                                    <strong>Php {obj.amount}.00</strong><br/>
+                                    <em>Account No. :{obj.sender}</em>
+                                </div>
+                                <br/>
+                            </>
+                        )}
+                    </td>
+                    <td data-label="Withdraw">
                         {withdraw.map(obj =>
-                            <div className="trans-dets">
-                                <strong>Php {obj.amount}</strong><br/>
-                                <em>Account No. :{obj.sender}</em>
-                            </div>)}
-                    </div>
-                </div>
-
-                <div className="trans-card trans">
-                    <h2>Transfer</h2>
-                    <br/>
-                    <div>
+                            <>
+                                <div className="trans-dets">
+                                    <strong>Php {obj.amount}.00</strong><br/>
+                                    <em>Account No. :{obj.sender}</em>
+                                </div>
+                                <br/>
+                            </>
+                        )}
+                    </td>
+                    <td data-label="Sender">
                         {transfer.map(obj =>
-                            <div className="trans-dets">
-                                <em>Account No. :{obj.sender}</em>
-                                <strong>Php {obj.amount}</strong>
-                                <em>Account No. :{obj.receiver}</em>
-                            </div>)}
-                    </div>
-                </div>
-            </div>   
+                            <>
+                                <div className="trans-dets">
+                                    <strong>Php {obj.amount}.00</strong><br/>
+                                    <em>Account No. :{obj.sender}</em>
+                                </div>
+                                <br/>
+                            </>
+                        )}
+                    </td>
+                    <td data-label="Receiver">
+                        {transfer.map(obj =>
+                            <>
+                                <div className="trans-dets">
+                                    <strong>Php {obj.amount}.00</strong><br/>
+                                    <em>Account No. :{obj.receiver}</em>
+                                </div>
+                                <br/>
+                            </>
+                        )}
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }

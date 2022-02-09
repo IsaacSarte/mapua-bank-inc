@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 // Images
 import logo from '../../images/logo.png';
-import waves3 from '../../images/waves3.svg';
 
 // CSS
 import './members.css';
@@ -24,7 +23,7 @@ const Members = () => {
             </NavLink>
             <Sidebar /> 
             <div className="admin-logged-in">
-                <h1>MU Bank Inc. <br/> Account Holders </h1>
+                <h1>Account Holders </h1>
                 <button 
                     type="button"
                     className="btn solid"
@@ -41,7 +40,7 @@ const Members = () => {
                 {memberList.map(obj => 
                         <div className= 'card-mems'>
                             <div className= 'image-mems'>
-                                <img src='https://cdn-icons.flaticon.com/png/512/560/premium/560277.png?token=exp=1644384003~hmac=5d49ff1991434877f766fc79319e1fcf'/><br/>
+                                <img src='https://cdn-icons.flaticon.com/png/512/560/premium/560277.png?token=exp=1644384003~hmac=5d49ff1991434877f766fc79319e1fcf' alt="augh" /><br/>
                             </div>
                         
                             <div className= 'content-mems'>
@@ -54,9 +53,7 @@ const Members = () => {
                 )}
                 </div>
             </div>
-            {/*  */}
-
-            <img src={waves3} alt="wave bg" className="admin-wave" />        
+            {/*  */}     
         </div>
     )
 }

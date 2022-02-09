@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 // Images
 import logo from '../../images/logo.png';
-import waves2 from '../../images/waves2.svg';
 
 // CSS
 import './create.css';
@@ -274,7 +273,6 @@ const Create = () => {
                                 </div>
                             </div>
                         </div>
-                        <img src={waves2} alt="create-svg" className="admin-create-wave"/>
                     </>
                 : 
                     <div>Please Log In to continue</div>}

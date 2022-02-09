@@ -24,35 +24,56 @@
 
 .deposit-section {
     border-top-left-radius: 15px;
+    color: rgb(44, 44, 90);
+}
+
+.deposit-section:hover {
+    color: rgb(103, 103, 143);
+}
+
+.witdhraw-section {
+    color: rgb(102, 50, 70);
+}
+
+.witdhraw-section:hover {
+    color: rgb(151, 97, 118);
 }
 
 .transfer-section {
     border-top-right-radius: 15px;
+    color: rgb(25, 77, 42);
+}
+
+.transfer-section:hover {
+    color: rgb(54, 136, 82);
 }
 
 .admin-transactions-select section {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-weight: 550;
     outline: none;
-    background-color: rgb(71, 71, 71);
-    color: #fbfbfb;
+    /* background-color: rgb(71, 71, 71); */
+    /* color: #666666; */
     cursor: pointer;
     /* text-decoration: underline 2px #7e172a; */
     text-transform: uppercase;
 }
 
 .admin-transactions {
-    width: 80vw;
+    width: 70vw;
     height: 60vh;
     padding: 2rem;
-    border: 1px solid black;
-    background-color: rgb(56, 56, 56);
-    color: #fbfbfb;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    margin-top: 1rem;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+}
+
+.dep-svg {
+    width: 20%;
 }
 
 @media screen and (max-width: 500px) {

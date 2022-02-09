@@ -93,6 +93,8 @@ const Withdraw = () => {
                 <h5>{error}</h5>
             </label>
 
+            <br />
+
             <button
                 type="submit"
                 className="btn solid yellow"

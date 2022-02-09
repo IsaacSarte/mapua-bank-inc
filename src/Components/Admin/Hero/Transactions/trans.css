@@ -2,6 +2,14 @@
     margin-top: 5rem;
 }
 
+.form-trans h2 {
+    color: #000;
+}
+
+.trans {
+    margin-top: 0rem;
+}
+
 .form-trans label {
     font-size: 1.25rem;
     font-weight: 500;

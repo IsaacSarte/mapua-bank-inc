@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 // Images
 import logo from '../../../images/logo.png';
-import waves from '../../../images/waves.svg';
 
 // CSS
 import './hero.css';
@@ -43,7 +42,7 @@ const Hero = (props) => {
             </NavLink>
             <Sidebar />
             <div className="admin-logged-in">
-                <h1>Hi {adminUser.firstName}!<br /> MU Bank Inc. Admin </h1>
+                <h1>Welcome Back Admin {adminUser.firstName}!<br /> </h1>
                 <button onClick={handleLogout} className="logout-btn">Logout</button>
             </div>
             {/*  */}
@@ -80,8 +79,6 @@ const Hero = (props) => {
 
             {/*  */}
 
-
-            <img src={waves} alt="wave bg" className="admin-wave" />
         </div>
     )
 }

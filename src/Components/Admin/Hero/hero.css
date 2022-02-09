@@ -1,3 +1,9 @@
+body {
+    background-image: url(../../../images/bgadmin.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .dashboard-logo {
     width: 150px;
     position: fixed;
@@ -10,6 +16,7 @@
     place-items: center;
     text-align: center;
     margin-top: 5rem;
+    margin-bottom: 2rem;
 }
 
 .logout-btn {
@@ -51,6 +58,10 @@
     --weight1: 200;
     --weight2: 400;
     --weight3: 600;
+}
+
+.row1-container {
+    margin-top: 1rem;
 }
 
 .box p {

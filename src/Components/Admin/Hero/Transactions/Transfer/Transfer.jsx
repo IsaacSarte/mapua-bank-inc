@@ -71,7 +71,7 @@ const Transfer = () => {
 
     return (
 
-        <form onSubmit={(e) => { handleTransfer(e) }} className="form-trans">
+        <form onSubmit={(e) => { handleTransfer(e) }} className="form-trans trans">
 
             <h2>Sender</h2>
             <br />
@@ -122,6 +122,8 @@ const Transfer = () => {
                     required />
                 <h5>{error}</h5>
             </label>
+
+            <br />
 
             <button
                 type="submit"
