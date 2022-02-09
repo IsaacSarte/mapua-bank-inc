@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 // Images
 import logo from '../../images/logo.png';
+import user from '../../images/programmer.png';
 
 // CSS
 import './members.css';
@@ -40,7 +41,7 @@ const Members = () => {
                 {memberList.map(obj => 
                         <div className= 'card-mems'>
                             <div className= 'image-mems'>
-                                <img src='https://cdn-icons.flaticon.com/png/512/560/premium/560277.png?token=exp=1644384003~hmac=5d49ff1991434877f766fc79319e1fcf' alt="augh" /><br/>
+                                <img src={user} alt="augh" /><br/>
                             </div>
                         
                             <div className= 'content-mems'>
