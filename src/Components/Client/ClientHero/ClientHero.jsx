@@ -7,6 +7,9 @@ import logo from '../../../images/logo.png';
 // CSS
 import './clienthero.css';
 
+// Framer Motion
+import { motion } from 'framer-motion';
+
 // Components
 import ClientTransactions from './ClientTransactions/ClientTransactions'
 import BudgetPlanner from '../BudgetPlanner/BudgetPlanner'
@@ -48,16 +51,24 @@ const ClientHero = (props) => {
             <div className="client-details">
                 <div className="client-details-container">
 
-                    <div className="client-details-card cyan">
+                    <motion.div className="client-details-card cyan bal"
+                        initial={{ opacity: 0, transform: 'translateY(5rem)' }}
+                        animate={{ opacity: 1, transform: 'translateY(0rem)' }}
+                        transition={{ duration: 1, delay: 0 }}
+                    >
                         {/* <section className={styles.balance}> */}
                         <h2>Balance: </h2>
                         <h1>Php{clientUser.balance}.00</h1>
                         {/* </section> */}
-                    </div>
+                    </motion.div>
 
                     <br />
 
-                    <div className="client-details-card cldet red">
+                    <motion.div className="client-details-card cldet red dets"
+                        initial={{ opacity: 0, transform: 'translateY(5rem)' }}
+                        animate={{ opacity: 1, transform: 'translateY(0rem)' }}
+                        transition={{ duration: 1, delay: 0 }}
+                    >
                         <section>
                             <strong>Account No.: {clientUser.accountNo}</strong>
                         </section>
@@ -69,11 +80,15 @@ const ClientHero = (props) => {
                                 : <><br /><strong>No contact number available</strong></>
                             }
                         </section>
-                    </div>
+                    </motion.div>
 
                     <br />
 
-                    <div className="client-details-card blue">
+                    <motion.div className="client-details-card blue tra"
+                        initial={{ opacity: 0, transform: 'translateY(5rem)' }}
+                        animate={{ opacity: 1, transform: 'translateY(0rem)' }}
+                        transition={{ duration: 1, delay: 0 }}
+                    >
                         {clientUser.history.length !== 0
                             ? <>
                                 <h2>Latest Transaction:</h2>
@@ -93,7 +108,7 @@ const ClientHero = (props) => {
                                     <li>No Transactions Made</li>
                                 </div>
                             </>}
-                    </div>
+                    </motion.div>
                 </div>
 
                 <hr className="hr-line" />

@@ -7,6 +7,9 @@ import logo from '../../images/logo.png';
 // CSS
 import './create.css';
 
+// Framer Motion
+import {motion} from 'framer-motion';
+
 // Components
 import AccountNo from '../../Components/Admin/Hero/Create/AccountNo'
 import Sidebar from '../../Components/Sidebar/Sidebar';
@@ -131,7 +134,11 @@ const Create = () => {
                                     <h1>Create New Account Holder</h1>
                                 </div>
                                 <div className="admin-create-content">
-                                <form onSubmit={(e) => handleCreate(e)} className="form">
+                                <motion.form onSubmit={(e) => handleCreate(e)} className="form"
+                                    initial={{ opacity: 0, marginLeft: '-5rem' }}
+                                    animate={{ opacity: 1, marginLeft: '0rem' }}
+                                    transition={{ duration: 0.5, delay: 0 }}
+                                >
                                     <div className="admin-create-details">
                                         <div className="input-box">
                                             <span className="details">First Name</span>
@@ -269,7 +276,7 @@ const Create = () => {
                                             </button>
                                         </div>
                                     </div>
-                                </form>
+                                </motion.form>
                                 </div>
                             </div>
                         </div>

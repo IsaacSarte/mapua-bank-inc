@@ -82,4 +82,16 @@
     .client-details-card h1 {
         font-size: 1.25rem;
     }
+
+    .bal {
+        margin-left: 1.5rem !important;
+    }
+
+    .dets {
+        margin-left: 0rem !important;
+    }
+
+    .tra {
+        margin-left: 1.5rem !important;
+    }
 }

@@ -69,7 +69,7 @@ const Deposit = () => {
 
             <div className="trans-details">
                 <h3>Account Name: <span>{target.firstName} {target.lastName}</span></h3>
-                <h3>Balance: <span>Php {target.balance}</span></h3>
+                <h3>Balance: <span>Php {target.balance}.00</span></h3>
             </div>
 
             <br />
@@ -80,7 +80,7 @@ const Deposit = () => {
                     type="number"
                     value={deposit}
                     onChange={(e) => { setDeposit(e.target.value) }}
-                    min={1000}
+                    min={500}
                     required
                 />
             </label>

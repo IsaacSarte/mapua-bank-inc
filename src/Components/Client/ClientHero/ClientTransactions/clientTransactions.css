@@ -53,5 +53,10 @@
 
     .client-transactions-select section {
         font-size: 0.8rem;
+        gap: 1rem;
+    }
+
+    .client-transactions-select {
+        white-space: nowrap;
     }
 }

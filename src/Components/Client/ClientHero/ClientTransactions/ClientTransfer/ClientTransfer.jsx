@@ -60,6 +60,7 @@ const ClientTransfer = (props) => {
     return (
         <form onSubmit={(e) => { handleTransfer(e) }} className="form-trans-client trans-client">
             <h2>Receiver</h2>
+            <br />
             <label>
                 Account Number {""}
                 <input

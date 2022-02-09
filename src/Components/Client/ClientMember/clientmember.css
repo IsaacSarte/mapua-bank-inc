@@ -318,7 +318,7 @@ form.log-in-form {
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
 
     .forms-container {
@@ -327,6 +327,20 @@ form.log-in-form {
         height: 75%;
         top: 0;
         left: 0;
+    }
+
+    .input-field {
+        max-width: 380px;
+        width: 100%;
+        margin: 10px 0;
+        height: 50px;
+        border-radius: 25px !important;
+        padding: 0 0.4rem;
+
+    }
+
+    .input-field input {
+        font-size: 1rem;
     }
 
     .image-admin {

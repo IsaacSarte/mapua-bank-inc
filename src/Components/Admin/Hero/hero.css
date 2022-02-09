@@ -161,6 +161,17 @@ h2 {
 }
 
 @media screen and (max-width: 414px) {
+    .logout-btn {
+        width: 125px !important;
+        height: 30px !important;
+        font-size: 0.65rem !important;
+    }
+
+    .box {
+        width: 75%;
+        height: 155px;
+    }
+
     .admin-trans-container {
         overflow: hidden;
     }
@@ -169,7 +180,9 @@ h2 {
         font-size: 1.5rem;
     }
 
-    .admin-wave {
-        width: 110vw;
+    .cyan,
+    .blue {
+        margin-left: 4rem !important;
     }
+
 }

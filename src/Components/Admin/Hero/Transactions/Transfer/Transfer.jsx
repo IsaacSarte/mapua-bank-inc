@@ -88,7 +88,7 @@ const Transfer = () => {
 
             <div className="trans-details">
                 <h3>Account Name: <span>{targetSender.firstName} {targetSender.lastName}</span></h3>
-                <h3>Balance: <span>Php {targetSender.balance}</span></h3>
+                <h3>Balance: <span>Php {targetSender.balance}.00</span></h3>
             </div>
 
             <br />
@@ -107,7 +107,7 @@ const Transfer = () => {
 
             <div className="trans-details">
                 <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
-                <h3>Balance: <span>Php {targetReceiver.balance}</span></h3>
+                <h3>Balance: <span>Php {targetReceiver.balance}.00</span></h3>
             </div>
 
             <br />
@@ -117,7 +117,7 @@ const Transfer = () => {
                 <input
                     type="number"
                     value={transfer}
-                    min={1}
+                    min={500}
                     onChange={(e) => { setTransfer(e.target.value); setError(""); }}
                     required />
                 <h5>{error}</h5>

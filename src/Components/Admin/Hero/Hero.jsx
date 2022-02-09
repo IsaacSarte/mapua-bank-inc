@@ -11,7 +11,7 @@ import './hero.css';
 import Sidebar from '../../Sidebar/Sidebar.js';
 
 // Framer Motion
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Hero = (props) => {
 
@@ -47,12 +47,16 @@ const Hero = (props) => {
             </div>
             {/*  */}
             <div className="row1-container">
-                <div className="box box-down cyan">
+                <motion.div className="box box-down cyan"
+                    initial={{ opacity: 0, transform: 'translateY(5rem)' }}
+                    animate={{ opacity: 1, transform: 'translateY(0rem)' }}
+                    transition={{ duration: 1, delay: 0 }}
+                >
                     <h2>Total Bank Account Holders</h2>
                     <br />
                     <p>Total = <strong>{bankMembers}</strong> Account Holders</p>
                     <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
-                </div>
+                </motion.div>
 
                 <div className="box red">
                     <h2>Total Bank Balance</h2>
@@ -61,12 +65,16 @@ const Hero = (props) => {
                     <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
                 </div>
 
-                <div className="box box-down blue">
+                <motion.div className="box box-down blue"
+                    initial={{ opacity: 0, transform: 'translateY(-5rem)' }}
+                    animate={{ opacity: 1, transform: 'translateY(0rem)' }}
+                    transition={{ duration: 1, delay: 0 }}
+                >
                     <h2>Total Bank Transactions</h2>
                     <br />
                     <p>Total = <strong>{bankTransactions}</strong> Transactions</p>
                     <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
-                </div>
+                </motion.div>
             </div>
             <div className="row2-container">
                 <div className="box orange">

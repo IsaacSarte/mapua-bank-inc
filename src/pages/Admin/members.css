@@ -31,4 +31,8 @@
         width: 15rem;
         font-size: 0.9rem;
     }
+
+    .content-mems span {
+        font-size: 0.9rem;
+    }
 }

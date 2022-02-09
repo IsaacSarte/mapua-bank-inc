@@ -77,7 +77,7 @@ const Withdraw = () => {
 
             <div className="trans-details">
                 <h3>Account Name: <span>{target.firstName} {target.lastName}</span></h3>
-                <h3>Balance: <span>Php {target.balance}</span></h3>
+                <h3>Balance: <span>Php {target.balance}.00</span></h3>
             </div>
 
             <br />

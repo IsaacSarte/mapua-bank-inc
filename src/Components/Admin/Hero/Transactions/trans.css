@@ -46,15 +46,27 @@
 
     .form-trans label {
         font-size: 1rem;
-        margin-left: 1.5rem;
+        margin-left: 2.5rem;
     }
 
     .form-trans label input {
         border-radius: 0px;
     }
 
+    .trans-details h3,
+    .trans-details span {
+        font-size: 0.75rem;
+    }
+
     .yellow {
         font-size: 0.75rem !important;
     }
 
+}
+
+@media screen and (max-width: 360px) {
+    .form-trans label {
+        font-size: 1rem;
+        margin-left: 3.5rem;
+    }
 }
