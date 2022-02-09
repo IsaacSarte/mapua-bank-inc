@@ -96,6 +96,8 @@ const ClientHero = (props) => {
                     </div>
                 </div>
 
+                <hr className="hr-line" />
+
                 <div>
                     <ClientTransactions
                         clientUser={clientUser}

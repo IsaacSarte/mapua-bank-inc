@@ -53,23 +53,29 @@ const BudgetPlanner = (props) => {
 
     return (
         <div className="bplanner">
+            <hr className="hr-line" />
             <section>
                 <h2>Budget: </h2>
                 <h2>Php {budget - totalCost}.00 </h2>
             </section>
 
-            <form onSubmit={(e) => handleAddExpense(e)}>
+            <form onSubmit={(e) => handleAddExpense(e)} className="form-bg">
+                <br />
                 <h2>Budget Planner</h2>
+                <br />
                 <label>
-                    Title
+                    Title {""}
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => { setTitle(e.target.value) }}
                         required />
                 </label>
+
+                <br />
+
                 <label>
-                    Cost
+                    Cost {""}
                     <input
                         type="text"
                         value={cost}
@@ -77,14 +83,23 @@ const BudgetPlanner = (props) => {
                         required />
                 </label>
 
+                <br />
+
                 <button
-                    type="submit">
-                    Add to Budget Planner
+                    type="submit"
+                    className="btn solid green"
+                >
+                    Add
                 </button>
             </form>
 
-            <section>
+            <br />
+
+            <hr className="hr-line" />
+
+            <section className="bglist">
                 <h2>Budget Planner List</h2>
+                <br />
                 <div>
                     {expense.map(obj =>
                         <BudgetList

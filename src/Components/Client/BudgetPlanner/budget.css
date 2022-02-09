@@ -2,3 +2,56 @@
     color: #000;
     margin-left: 15vw;
 }
+
+.form-bg h2 {
+    color: #000;
+}
+
+.form-bg label {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.form-bg label input {
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.hr-line {
+    margin-bottom: 1rem;
+}
+
+.budget-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.budget-list-title {
+    font-size: 1.25rem;
+    color: rgb(12, 12, 83);
+}
+
+.green {
+    background-color: green !important;
+}
+
+.green:hover {
+    background-color: rgb(3, 65, 3) !important;
+}
+
+.bg {
+    background-color: transparent !important;
+    color: rgb(48, 0, 0) !important;
+    font-weight: 600 !important;
+    border: 1px solid rgb(70, 3, 3) !important;
+}

@@ -21,11 +21,15 @@ const BudgetList = (props) => {
     }
 
     return (
-        <li>
-            <strong>Php {cost}</strong>
-            <strong>{title}</strong>
-            <button onClick={handleRemove}>Remove</button>
-        </li>
+        <ul className="budget-list-container">
+            <li className="budget-list">
+                <strong> - Php {cost}.00 </strong> || {""}
+                <strong className="budget-list-title">{title}</strong><br />
+                <button onClick={handleRemove} className="btn solid bg">Remove</button>
+            </li>
+            <br />
+        </ul>
+
     )
 }
 export default BudgetList;
