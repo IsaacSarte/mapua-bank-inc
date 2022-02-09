@@ -68,8 +68,8 @@ const Deposit = () => {
             <br />
 
             <div className="trans-details">
-                <h3>Account Name: {target.firstName} {target.lastName}</h3>
-                <h3>Balance: {target.balance}</h3>
+                <h3>Account Name: <span>{target.firstName} {target.lastName}</span></h3>
+                <h3>Balance: <span>Php {target.balance}</span></h3>
             </div>
 
             <br />

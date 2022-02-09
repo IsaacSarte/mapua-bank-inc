@@ -87,8 +87,8 @@ const Transfer = () => {
             <br />
 
             <div className="trans-details">
-                <h3>Account Name: {targetSender.firstName} {targetSender.lastName}</h3>
-                <h3>Balance: {targetSender.balance}</h3>
+                <h3>Account Name: <span>{targetSender.firstName} {targetSender.lastName}</span></h3>
+                <h3>Balance: <span>Php {targetSender.balance}</span></h3>
             </div>
 
             <br />
@@ -107,7 +107,7 @@ const Transfer = () => {
 
             <div className="trans-details">
                 <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
-                <h3>Balance: {targetReceiver.balance}</h3>
+                <h3>Balance: <span>Php {targetReceiver.balance}</span></h3>
             </div>
 
             <br />
