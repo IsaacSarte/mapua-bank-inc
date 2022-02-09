@@ -6,12 +6,13 @@
 }
 
 .admin-create-container {
-    margin-top: 1rem;
+    margin-top: 3rem;
     max-width: 700px;
     width: 100%;
     padding: 25px 30px;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid var(--blue);
 }
 
 .admin-create-container .admin-create-title {

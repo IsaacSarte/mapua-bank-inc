@@ -6,23 +6,7 @@
 }
 
 .member-list {
-    display: grid;
-    place-items: center;
-    margin-top: 5rem;
-    margin-left: 0.88rem;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 5fr));
-    grid-gap: 1rem;
-}
-
-.members {
-    transition: transform 1s;
-    background: rgb(39, 39, 39);
-    width: 19rem;
-    height: 10rem;
-    color: #fff;
-    font-weight: 550;
-    border-radius: .5rem;
-    text-align: center;
+    overflow: hidden;
 }
 
 .members span {
@@ -37,18 +21,7 @@
     font-size: 1.25rem;
 }
 
-.hr-line {
-    width: 50%;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #000 !important;
-}
-
 @media screen and (max-width: 500px) {
-    .hr-line {
-        width: 100%;
-    }
 
     .member-list {
         margin-top: 1rem;

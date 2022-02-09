@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
+// Images
+import logo from '../../images/logo.png';
+
 // CSS
 import './history.css';
 
@@ -19,51 +22,55 @@ const History = () => {
 
     return (
         <div>
+            <NavLink to="/">
+                <img src={logo} alt="logo header" className="dashboard-logo" />
+            </NavLink>
             <Sidebar />
+            <div className="admin-logged-in">
+                <h1>MU Bank Inc. <br/> Transaction History</h1>
+                <button className="btn solid">
+                    <NavLink to="/admin" exact>Go Back</NavLink>
+                </button>
+            </div>
 
-                <div className="admin-transaction-history">
-                    <h1>MU Bank Inc. Transaction History</h1>
-                    <button>
-                        <NavLink to="/admin" exact>Go Back</NavLink>
-                    </button>
-                </div>
-
-                <div className="transaction-list">
-                    <div>
-                        <h2>Deposit</h2>
-                    </div>
+            <div className="transaction-list">
+                <div className="trans-card dep">
+                    <h2>Deposit</h2>
+                    <br/>
                     <div>
                         {deposit.map(obj =>
-                            <div>
-                                <strong>Php {obj.amount}</strong>
+                            <div className="trans-dets">
+                                <strong>Php {obj.amount}</strong><br/>
                                 <em>Account No. :{obj.sender}</em>
                             </div>)}
                     </div>
+                </div>
 
-                    <div>
-                        <h2>Withdraw</h2>
-                    </div>
+                <div className="trans-card witd">
+                    <h2>Withdraw</h2>
+                    <br/>
                     <div>
                         {withdraw.map(obj =>
-                            <div>
-                                <strong>Php {obj.amount}</strong>
+                            <div className="trans-dets">
+                                <strong>Php {obj.amount}</strong><br/>
                                 <em>Account No. :{obj.sender}</em>
                             </div>)}
                     </div>
+                </div>
 
-                    <div>
-                        <h2>Transfer</h2>
-                    </div>
+                <div className="trans-card trans">
+                    <h2>Transfer</h2>
+                    <br/>
                     <div>
                         {transfer.map(obj =>
-                            <div>
+                            <div className="trans-dets">
                                 <em>Account No. :{obj.sender}</em>
                                 <strong>Php {obj.amount}</strong>
                                 <em>Account No. :{obj.receiver}</em>
                             </div>)}
                     </div>
-
-                </div>   
+                </div>
+            </div>   
         </div>
     )
 }

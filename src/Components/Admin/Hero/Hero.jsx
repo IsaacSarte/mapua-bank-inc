@@ -37,7 +37,7 @@ const Hero = (props) => {
     }
 
     return (
-        <>
+        <div>
             <NavLink to="/">
                 <img src={logo} alt="logo header" className="dashboard-logo" />
             </NavLink>
@@ -46,23 +46,43 @@ const Hero = (props) => {
                 <h1>Hi {adminUser.firstName}!<br /> MU Bank Inc. Admin </h1>
                 <button onClick={handleLogout} className="logout-btn">Logout</button>
             </div>
-
-            <div className="admin-trans-container">
-
-                <div className="admin-trans-card">
-                    <h2>MU Total Bank Balance: <br /> Php {bankBalance}</h2>
-                </div>
-                <div className="admin-trans-card">
-                    <h2>MU All Bank Account Holders: <br /> {bankMembers}</h2>
-                </div>
-                <div className="admin-trans-card">
-                    <h2>MU Total Bank Transactions: <br /> {bankTransactions}</h2>
+            {/*  */}
+            <div className="row1-container">
+                <div className="box box-down cyan">
+                    <h2>Total Bank Account Holders</h2>
+                    <br />
+                    <p>Total = <strong>{bankMembers}</strong> Account Holders</p>
+                    <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
                 </div>
 
+                <div className="box red">
+                    <h2>Total Bank Balance</h2>
+                    <br />
+                    <p>Total = <strong>Php {bankBalance}.00</strong></p>
+                    <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
+                </div>
+
+                <div className="box box-down blue">
+                    <h2>Total Bank Transactions</h2>
+                    <br />
+                    <p>Total = <strong>{bankTransactions}</strong> Transactions</p>
+                    <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
+                </div>
+            </div>
+            <div className="row2-container">
+                <div className="box orange">
+                    <h2>Mapua Bank Inc Admin</h2>
+                    <br />
+                    <p>Isaac Sarte | JR Franco | Ruby Ledda | Marc Arceo | Steve Feria</p>
+                    <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
+                </div>
             </div>
 
+            {/*  */}
+
+
             <img src={waves} alt="wave bg" className="admin-wave" />
-        </>
+        </div>
     )
 }
 

@@ -106,6 +106,7 @@ const Container = styled.div`
   padding-top: 0vh;
   padding-left: 0vw;
   position: fixed;
+  z-index: 1000;
   left: 0;
   .active {
     color: #fff;

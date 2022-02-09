@@ -1,12 +1,16 @@
-.admin-transaction-history {
-    display: grid;
-    place-items: center;
-    text-align: center;
-    margin-top: 5rem;
+.sign-up-logo-his {
+    width: 150px;
+    position: fixed;
+
+}
+
+.btn a {
+    color: #fff;
 }
 
 .transaction-list {
     display: grid;
     place-items: center;
-    margin-top: 5rem;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
 }

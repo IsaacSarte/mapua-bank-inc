@@ -31,24 +31,6 @@
     background-color: #6d1324;
 }
 
-.admin-trans-container {
-    display: grid;
-    place-items: center;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.admin-trans-card {
-    margin-top: 2.5rem;
-    background: rgb(39, 39, 39);
-    color: #fff;
-    border-radius: .5rem;
-    padding: 2rem;
-    width: 27rem;
-}
-
 .admin-wave {
     position: fixed;
     bottom: 0;
@@ -58,14 +40,118 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 390px) {
-    .admin-trans-container {
-        overflow: hidden;
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(0, 0%, 37%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    padding: 30px;
+    margin: 20px;
+}
+
+img {
+    float: right;
+}
+
+@media (max-width: 450px) {
+    .box {
+        height: 175px;
+        transform: translateX(12.5vw);
+        width: 300px;
     }
 
-    .admin-trans-card {
-        font-size: 0.65rem;
-        width: 14rem;
+    .box h2 {
+        z-index: -1;
+    }
+
+    .orange {
+        display: none;
+    }
+
+    img {
+        width: 10%;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        text-align: center;
+        height: 180px;
+    }
+
+    .orange {
+        display: none;
+    }
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+
+.red {
+    border-top: 3px solid var(--red);
+}
+
+.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.orange {
+    border-top: 3px solid var(--orange);
+}
+
+h2 {
+    color: var(--varyDarkBlue);
+    font-weight: var(--weight3);
+}
+
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+
+    .box {
+        width: 20%;
+    }
+
+    .header p {
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+    .admin-trans-container {
+        overflow: hidden;
     }
 
     .admin-logged-in h1 {
