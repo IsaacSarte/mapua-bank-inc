@@ -4,14 +4,8 @@ import React, {useState, useEffect} from 'react';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 
 // Components
-import Navbar from '../../Components/Navbar';
-// Components
 import ClientHero from '../../Components/Client/ClientHero/ClientHero'
-import GuestHero from '../../Components/Client/GuestHero/GuestHero'
-
 import ClientMember from '../../Components/Client/ClientMember/ClientMember'
-import GuestMember from '../../Components/Client/GuestMember/GuestMember'
-import NewGuestMember from '../../Components/Client/NewGuestMember/NewGuestMember'
 
 // CSS
 import './styles/client.css';
@@ -91,18 +85,13 @@ const Client = () => {
                 ?   <ClientHero 
                         setClientActive={setClientActive}/>
                 :   guestActive
-                        ?   <GuestHero 
-                                setGuestActive={setGuestActive}/>
+                        ?   <></>
                         :   bankMember 
                                 ?   <ClientMember
                                         setClientActive={setClientActive} 
                                         setBankMember={setBankMember}/>
                                 :   guestMember
-                                        ?   <GuestMember
-                                                setGuestActive={setGuestActive}
-                                                setGuestMember={setGuestMember}/>
-                                        :   <NewGuestMember
-                                                setGuestActive={setGuestActive}/>}
+            }
           </>
         }
       </div>

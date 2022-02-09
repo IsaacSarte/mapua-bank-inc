@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // CSS
+import './budget.css';
 
 // Components
 import BudgetList from './BudgetList'
@@ -51,11 +52,10 @@ const BudgetPlanner = (props) => {
     }
 
     return (
-        <div>
-
+        <div className="bplanner">
             <section>
-                <h2>Budget</h2>
-                <h2>Php{budget - totalCost}</h2>
+                <h2>Budget: </h2>
+                <h2>Php {budget - totalCost}.00 </h2>
             </section>
 
             <form onSubmit={(e) => handleAddExpense(e)}>
@@ -95,7 +95,6 @@ const BudgetPlanner = (props) => {
                             clientUser={clientUser} />)}
                 </div>
             </section>
-
         </div>
     )
 }

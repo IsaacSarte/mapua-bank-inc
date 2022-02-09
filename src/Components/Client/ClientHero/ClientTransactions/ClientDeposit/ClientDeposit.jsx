@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+
+// CSS
+import '../cltrans.css';
 
 const ClientDeposit = (props) => {
 
@@ -40,9 +43,9 @@ const ClientDeposit = (props) => {
     }
 
     return (
-        <form onSubmit={(e) => { handleDeposit(e) }}>
+        <form onSubmit={(e) => { handleDeposit(e) }} className="form-trans-client">
             <label>
-                Deposit Amount
+                Deposit Amount {""}
                 <input
                     type="number"
                     value={deposit}
@@ -51,8 +54,12 @@ const ClientDeposit = (props) => {
                     required />
             </label>
 
+            <br />
+
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Deposit
             </button>
         </form>

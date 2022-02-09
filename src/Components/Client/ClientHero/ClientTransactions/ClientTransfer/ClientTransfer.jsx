@@ -58,10 +58,10 @@ const ClientTransfer = (props) => {
 
 
     return (
-        <form onSubmit={(e) => { handleTransfer(e) }}>
+        <form onSubmit={(e) => { handleTransfer(e) }} className="form-trans-client trans-client">
             <h2>Receiver</h2>
             <label>
-                Account No
+                Account Number {""}
                 <input
                     type="text"
                     value={receiverAccount}
@@ -69,12 +69,17 @@ const ClientTransfer = (props) => {
                     required />
             </label>
 
-            <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
+            <br />
 
-            <h3>Balance: {targetReceiver.balance}</h3>
+            <div className="trans-details">
+                <h3>Account Name: {targetReceiver.firstName} {targetReceiver.lastName}</h3>
+                <h3>Balance: Php {targetReceiver.balance}.00</h3>
+            </div>
+
+            <br />
 
             <label>
-                Transfer Amount
+                Transfer Amount {""}
                 <input
                     type="number"
                     value={transfer}
@@ -84,8 +89,12 @@ const ClientTransfer = (props) => {
                 <h5>{error}</h5>
             </label>
 
+            <br />
+
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Transfer
             </button>
         </form>

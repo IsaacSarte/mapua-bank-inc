@@ -47,20 +47,24 @@ const ClientWithdraw = (props) => {
     }
 
     return (
-        <form onSubmit={(e) => { handleWithdraw(e) }}>
+        <form onSubmit={(e) => { handleWithdraw(e) }} className="form-trans-client">
             <label>
-                Withdraw Amount
+                Withdraw Amount {""}
                 <input
                     type="number"
                     value={withdraw}
-                    min={1}
+                    min={500}
                     onChange={(e) => { setWithdraw(e.target.value); setError(""); }}
                     required />
                 <h5>{error}</h5>
             </label>
 
+            <br />
+
             <button
-                type="submit">
+                type="submit"
+                className="btn solid yellow"
+            >
                 Withdraw
             </button>
         </form>

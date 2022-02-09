@@ -1,6 +1,7 @@
 import React from 'react';
 
 // CSS
+import './budget.css';
 
 const BudgetList = (props) => {
 
